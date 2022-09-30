@@ -21,5 +21,10 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | code   | name |     description |
 | :-----: | :--: | :-------: |
 | 1XX |  core protocol  | this kind of BTIP will affect core protocal |
-| 2XX |  client api  | this kind of BTIP will affect client api |
-| X0X |  uncompatible  | this kind of BTIP will not be backwards compatible |
+| 2XX |  client api  | this kind of BTIP will affect client api |compatible |
+
+## All BTIPs list:
+|   ID   |    Title     | Author |  Type  | Category | Status |
+|  :---: | :----------: | :----: | :----: |  :----:  | :----: |
+| 201 |  [Integrate With BitTorrent Protocol](BTIPS/Integrate-With-Bittorrent.md)  | <shawn.huang@tron.network> | client api | | Draft |
+

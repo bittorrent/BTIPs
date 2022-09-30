@@ -1,7 +1,7 @@
 
 ```btip: <to be assigned>
 title: Integrate with bittorrent
-author: Shawn-Huang-Tron(@Shawn-Huang-Tron)
+author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/1
 status: Idea
 type: Client API
