@@ -17,7 +17,7 @@ BTFS adds a new command/API to downloads the contents of a specific bittorrent s
 
 ## Abstract (required)
 
-BTFS should integrate with the bittorrent libs to serve as a bittorrent client, and communicate with the tracker, DHT or bittorrent peers.Then downloads the content,after downloading completed, stop the communications with those p2p.
+BTFS should integrate with the bittorrent libs to serve as a bittorrent client, and communicate with the tracker, DHT or bittorrent peers.Then downloads the content, if it was existed in BTFS already, then just download via BTFS network, after downloading completed, stop the communications with those p2p.
 
 ## Motivation (required)
 
