@@ -1,5 +1,5 @@
 
-```btip: <to be assigned>
+```btip: 1
 title: Integrate with bittorrent
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/1
@@ -7,8 +7,6 @@ status: Idea
 type: Client API
 category (*only required for Core Protocol):
 created: 2022-09-30
-requires (*optional): <BTIP number(s)>
-replaces (*optional): <BTIP number(s)>
 ```
 
 ## Simple Summary (required)
