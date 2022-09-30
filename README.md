@@ -1,2 +1,25 @@
 # BTIPs
 The BTFS Improvement Proposal repository
+
+BitTorrent File System Improvement Proposals (BTIPs) describe standards for the BTFS platform, including core protocol specifications and client APIs. 
+## Contributing
+First review this README. Then clone the repository and add your BTIP to it. There is a template BTIP here. Then submit a Pull Request to this repository.
+
+## BTIP status terms
+- **Idea** - An idea that is pre-draft. This is not tracked within the BTIP Repository.
+- **Draft** - The first formally tracked stage of an BTIP in development. An BTIP is merged by an BTIP Editor into the BTIP repository when properly formatted.
+- **Review** - An BTIP Author marks an BTIP as ready for and requesting Peer Review.
+- **Last Call** - This is the final review window for an EIP before moving to - FINAL. An BTIP editor will assign Last Call status and set a review end date (`last-call-deadline`), typically 14 days later. If this period results in necessary normative changes it will revert the BTIP to Review.
+- **Final** - This BTIP represents the final standard. A Final EIP exists in a state of finality and should only be updated to correct errata and add non-normative clarifications.
+- **Stagnant** - Any EIP in Draft or Review if inactive for a period of 3 months or greater is moved to Stagnant. An BTIP may be resurrected from this state by Authors or BTIP Editors through moving it back to Draft.
+- **Withdrawn** - The BTIP Author(s) have withdrawn the proposed BTIP. This state has finality and can no longer be resurrected using this BTIP number. If the idea is pursued at later date it is considered a new proposal.
+- **Living** - A special status for EIPs that are designed to be continually updated and not reach a state of finality.
+## The standardization process about the status:
+![This is the process about the status](BTIP-process-update.jpeg)
+
+## BTIP status code
+| code   | name |     description |
+| :-----: | :--: | :-------: |
+| 1XX |  core protocol  | this kind of BTIP will affect core protocal |
+| 2XX |  client api  | this kind of BTIP will affect client api |
+| X0X |  uncompatible  | this kind of BTIP will not be backwards compatible |

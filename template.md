@@ -1,15 +1,15 @@
----
-btip: <to be assigned>
+
+```btip: <to be assigned>
 title: <BTIP title>
 author: <a list of the author's or authors' name(s) and/or username(s), or name(s) and email(s), e.g. (use with the parentheses or triangular brackets): FirstName LastName (@GitHubUsername), FirstName LastName <foo@bar.com>, FirstName (@GitHubUsername) and GitHubUsername (@GitHubUsername)>
 discussions-to: <URL>
-status: <Draft | Last Call | Accepted | Final | Deferred>
-type: <Standards Track (Core, Networking, Interface) | Informational>
-category (*only required for Standard Track): <Core | Networking | Interface>
+status: <Idea | Draft | Last Call | Accepted | Final | Withdrawn | Living>
+type: <Core Protocol | Client API>
+category (*only required for Core Protocol): <Core | Networking | Interface>
 created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
 requires (*optional): <BTIP number(s)>
 replaces (*optional): <BTIP number(s)>
----  
+```
 
 This is the suggested template for new BTIPs.
 
