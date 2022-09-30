@@ -2,7 +2,7 @@
 ```btip: <to be assigned>
 title: Integrate with bittorrent
 author: Shawn-Huang-Tron(@Shawn-Huang-Tron)
-discussions-to: <URL>
+discussions-to: https://github.com/bittorrent/BTIPs/issues/1
 status: Idea
 type: Client API
 category (*only required for Core Protocol):
