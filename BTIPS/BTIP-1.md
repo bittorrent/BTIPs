@@ -11,7 +11,7 @@ created: 2022-09-30
 
 ## Simple Summary
 
-BTFS adds a new command/API to downloads the files of a specific bittorrent seed or a magnent url.
+BTFS adds a new command/API to downloads the files of a specific bittorrent seed or a magnet URI scheme.
 
 ## Abstract
 
