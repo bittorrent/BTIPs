@@ -26,5 +26,5 @@ First review this README. Then clone the repository and add your BTIP to it. The
 ## All BTIPs list:
 |   ID   |    Title     | Author |  Type  | Category | Status |
 |  :---: | :----------: | :----: | :----: |  :----:  | :----: |
-| BTIP-1 |  [Integrate With BitTorrent Protocol](BTIPS/Integrate-With-Bittorrent.md)  | <shawn.huang@tron.network> | client api | | Draft |
+| BTIP-1 |  [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)  | <shawn.huang@tron.network> | client api | | Draft |
 
