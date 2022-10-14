@@ -31,6 +31,7 @@ In all these scenarios, it will be good for BTFS ecosystem to transfer the bitto
 
 ## Specification
 ### download a bittorrent file:
+
 ```shell
 btfs bittorrent download -t torrent-file.torrent
 ```
@@ -41,8 +42,17 @@ btfs bittorrent download 'magnet:?xt=urn:btih:KRWPCX3SJUM4IMM4YF5RPHL6ANPYTQPU'
 
 ## Rationale
 
-It based on the similarity between the BTFS and bittorrent.And the bittorrent is widely known.
-
+BTFS is dirrent from BitTorrent but they have something same such as they are all distributed network and decentralized.When we integrate with bittorrent, we consider the following steps:
+1. Parsing the magnetic links to bittorrent metadata if the target is a magnet url.
+2. Parsing the bittorrent file to bittorrent metadata if the target is a bittorrent seed file.
+3. Judge by the bittorrent metadata and choose how to get peers by tracker/dht/webseed/peer.
+4. Split the bittorrent metadata into a list of pieces and download all this pieces independently from the peers.
+5. We can see the process of downloading in the console.
+5. When downloading is finished, add this file to the local BTFS node by 
+```shell
+btfs add file
+```
+6. Maybe we can add a more user-interactive friendly dashboard to view this process.
 ## Backwards Compatibility
 
 true
