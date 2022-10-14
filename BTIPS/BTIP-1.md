@@ -48,11 +48,11 @@ BTFS is dirrent from BitTorrent but they have something same such as they are al
 3. Judge by the bittorrent metadata and choose how to get peers by tracker/dht/webseed/peer.
 4. Split the bittorrent metadata into a list of pieces and download all this pieces independently from the peers.
 5. We can see the process of downloading in the console.
-5. When downloading is finished, add this file to the local BTFS node by 
+6. When downloading is finished, add this file to the local BTFS node by 
 ```shell
 btfs add file
 ```
-6. Maybe we can add a more user-interactive friendly dashboard to view this process.
+7. Maybe we can add a more user-interactive friendly dashboard to view this process.
 ## Backwards Compatibility
 
 true
