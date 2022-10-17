@@ -3,7 +3,7 @@
 title: Integrate with bittorrent
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/1
-status: Idea
+status: Draft
 type: Client API
 category (*only required for Core Protocol):
 created: 2022-09-30
@@ -25,7 +25,6 @@ Imagine these scenarios:
 > - A BTFS host wants to download and save the bittorrent files so that he can reach it anywhere, then after this BTIP completed, he can find it via https://gateway.btfs.io/btfs/{cid} or another BTFS local gateway endpoint.
 > - A bittorrent user that has not deployed the BTFS node can visit this file via https://gateway.btfs.io/btfs/{cid}.
 > - Maybe some of the bittorrent user will try to view the BTFS as their alternatives, that will be very awesome for the BTFS ecosystem.
-
 
 In all these scenarios, it will be good for BTFS ecosystem to transfer the bittorrent's file.
 
