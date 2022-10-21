@@ -3,7 +3,7 @@
 title: Integrate with bittorrent
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/1
-status: Draft
+status: Review
 type: Client API
 category (*only required for Core Protocol):
 created: 2022-09-30
@@ -42,23 +42,25 @@ btfs bittorrent download 'magnet:?xt=urn:btih:KRWPCX3SJUM4IMM4YF5RPHL6ANPYTQPU'
 ## Rationale
 
 BTFS is dirrent from BitTorrent but they have something same such as they are all distributed network and decentralized.When we integrate with bittorrent, we consider the following steps:
+
 1. Parsing the magnetic links to bittorrent metadata if the target is a magnet url.
 2. Parsing the bittorrent file to bittorrent metadata if the target is a bittorrent seed file.
 3. Judge by the bittorrent metadata and choose how to get peers by tracker/dht/webseed/peer.
 4. Split the bittorrent metadata into a list of pieces and download all this pieces independently from the peers.
 5. We can see the process of downloading in the console.
-6. When downloading is finished, add this file to the local BTFS node by 
+6. When downloading is finished, add this file to the local BTFS node by
+
 ```shell
 btfs add file
 ```
+
 7. Maybe we can add a more user-interactive friendly dashboard to view this process.
+
 ## Backwards Compatibility
 
 true
 
 ## Test Cases
-
-
 
 ## Implementation
 
