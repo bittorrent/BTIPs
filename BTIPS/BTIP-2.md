@@ -13,8 +13,8 @@ created: 2022-10-17
 
 In the BTFS, the cheque are sent and cashed using WBTT. Sometimes we want to add more tokens for sending and cashing cheque; Such as TRX, USDT, USDD, etc.
 
-1.renter uploads the file and sends a cheque (with token) to host according to host support.
-2. The host cashes the cheque, cashing the cheque amount (specified token) from renter's Vault Contract.
+- 1.renter uploads the file and sends a cheque (with token) to host according to host support.
+- 2.The host cashes the cheque, cashing the cheque amount (specified token) from renter's Vault Contract.
 
 ## Abstract
 
