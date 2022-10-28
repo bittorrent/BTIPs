@@ -48,12 +48,12 @@ Users cooperate in the distribution
 
 ![bittorrent](../pictures/bittorrent.png)
 
-**So we know they are different, not only their goals and function, but also architecture.** but they still have the same technology:P2P.And they are all decentralized!
+**So we know they are different, not only their goals and function, but also architecture.** But they still have the same technology:P2P.And they are all decentralized!
 
 And int this BTIP, We support the following BEP specification(BEP stands for BitTorrent Enhancement Proposal,see: [BEP-1](http://bittorrent.org/beps/bep_0001.html)):
 
-> - core protocal: core protocal[BEP-3](http://bittorrent.org/beps/bep_0003.html)、Peer ID Conventions[BEP-3](http://bittorrent.org/beps/bep_0003.html)、
-> - centerialization coordinator: tracker[BEP-3](http://bittorrent.org/beps/bep_0003.html)、udp tracker[BEP-15](http://bittorrent.org/beps/bep_0015.html)
+> - core protocal: core protocal [BEP-3](http://bittorrent.org/beps/bep_0003.html)、Peer ID Conventions [BEP-3](http://bittorrent.org/beps/bep_0003.html)、
+> - centerialization coordinator: tracker [BEP-3](http://bittorrent.org/beps/bep_0003.html)、udp tracker [BEP-15](http://bittorrent.org/beps/bep_0015.html)
 > - DHT Protocol: [BEP-5](http://bittorrent.org/beps/bep_0005.html)
 > - WebSeed: [BEP-19](http://bittorrent.org/beps/bep_0019.html)
 
