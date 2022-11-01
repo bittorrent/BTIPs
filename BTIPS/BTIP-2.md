@@ -16,6 +16,9 @@ In the BTFS, the cheque are sent and cashed using WBTT. Sometimes we want to add
 - 1.renter uploads the file and sends a cheque (with token) to host according to host support.
 - 2.The host cashes the cheque, cashing the cheque amount (specified token) from renter's Vault Contract.
 
+The overall flow chart is as follows：
+![muti-tokens](../pictures/muti-tokens.png)
+
 ## Abstract
 
 Vault contract may support paying with TRX/USDT/USDD to satisfy more needs of the community and the renter can choose which kind of token to pay for the cheque.
@@ -42,7 +45,12 @@ This BTIP can convince the renter to choose a tokens type for the multi-tokens s
 We hope to calculate the cheque fee when uploading the file through the price oracle contract。
 You can see here: [BTIP-9](https://github.com/bittorrent/BTIPs/issues/9)
 
-### 3.Related Command Operations
+### 3.Contract Upgrade plan
+- a. According to the above modifications, develop and deploy new logical contracts, and pay attention to the problem of new global variables.
+- b. Use a test proxy contract, all tests pass, then release. (Test whether the new global variable affects the current cumulative data of the contract)
+
+
+### 4.Related Command Operations
 #### 1.renter uploads file with setting the token
 ```shell
 btfs cheque cash  16Uiu2HAkvWsNP5MVz5Spyo8qSgH8byMisnZHTZzxumZsLxYBzUzg--token-type WBTT
@@ -74,6 +82,36 @@ cheque's operations are in the vault contract. Each node has a vault contract an
 > - Before renter issues the cheque, checks which tokens are supported by the host, and checks the balance of different tokens self, then select one token(default WBTT) to pay.
 > - The token price can be determined based on the price contract. The Amount for uploading files is determined based on the file size and token price.
 > - The cheque is currently accumulated. If you support multiple tokens, you need a separate cumulative value for each token.
+
+To issue a cheque, select token logic pseudocode:
+```golang
+hostTokens = getHostTokens()
+renterTokens = getRenterTokens()
+ 
+if pointedToken != nil {
+    if pointedToken in hostTokens && pointedToken in renterTokens {
+        useToken = pointedToken
+    } else {
+        return "PointedToken is not supported."
+    }
+}
+ 
+if pointedToken == nil {
+    interTokens = hostTokens inter renterTokens
+    if WBTT in interTokens {
+        useToken = WBTT
+    } else if TRX in interTokens {
+        useToken = TRX
+    } else if TRX in interTokens {
+        useToken = USDD
+    } else if TRX in interTokens {
+        useToken = USDT
+    } else {
+        return "Unknown token supports."
+    }
+}
+
+```
 
 #### B. host cashes cheque, calls renter's vault contract. And host cashes cheque with different tokens. So command added parameters to distinguish between different tokens (--token-type [WBTT/TRX/USDD/USDT], default value: WBTT)
 
