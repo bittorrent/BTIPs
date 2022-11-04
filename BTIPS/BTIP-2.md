@@ -83,31 +83,44 @@ cheque's operations are in the vault contract. Each node has a vault contract an
 > - The token price can be determined based on the price contract. The Amount for uploading files is determined based on the file size and token price.
 > - The cheque is currently accumulated. If you support multiple tokens, you need a separate cumulative value for each token.
 
-To issue a cheque, select token logic pseudocode:
+
+firstly, To upload file, select token pseudocode:
 ```golang
-hostTokens = getHostTokens()
-renterTokens = getRenterTokens()
- 
 if pointedToken != nil {
-    if pointedToken in hostTokens && pointedToken in renterTokens {
+    
+	if pointedToken is enough {
         useToken = pointedToken
     } else {
-        return "PointedToken is not supported."
+		return "your pointed token is not enough."
     }
 }
- 
+
 if pointedToken == nil {
-    interTokens = hostTokens inter renterTokens
-    if WBTT in interTokens {
+    if WBTT balance is enough  {
         useToken = WBTT
-    } else if TRX in interTokens {
+    } else if TRX balance is enough {
         useToken = TRX
-    } else if TRX in interTokens {
+    } else if USDD is enough {
         useToken = USDD
-    } else if TRX in interTokens {
+    } else if USDT is enough {
         useToken = USDT
     } else {
-        return "Unknown token supports."
+        return "none token to support."
+    }
+}
+
+```
+
+secondly, To upload file, select host logic pseudocode:
+```golang
+hostTokens = getHostTokens(host)
+renterTokens = getRenterTokens(renter)
+ 
+if useToken != nil {
+    if useToken in hostTokens && useToken in renterTokens {
+        useHost = host
+    } else {
+        return "current host is invalid."
     }
 }
 
