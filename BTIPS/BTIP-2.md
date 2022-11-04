@@ -85,9 +85,9 @@ cheque's operations are in the vault contract. Each node has a vault contract an
 
 To issue a cheque, select token logic pseudocode:
 ```golang
-hostTokens = getHostTokens()
-renterTokens = getRenterTokens()
- 
+hostTokens := getHostTokens()
+renterTokens := getRenterTokens()
+
 if pointedToken != nil {
     if pointedToken in hostTokens && pointedToken in renterTokens {
         useToken = pointedToken
@@ -95,20 +95,21 @@ if pointedToken != nil {
         return "PointedToken is not supported."
     }
 }
- 
+
 if pointedToken == nil {
-    interTokens = hostTokens inter renterTokens
-    if WBTT in interTokens {
-        useToken = WBTT
-    } else if TRX in interTokens {
-        useToken = TRX
-    } else if TRX in interTokens {
-        useToken = USDD
-    } else if TRX in interTokens {
-        useToken = USDT
-    } else {
-        return "Unknown token supports."
-    }
+   interTokens := hostTokens inter renterTokens
+   
+   if WBTT in interTokens && WBTT balance is enough {
+	   useToken = WBTT
+   } else if TRX in interTokens && TRX balance is enough {
+	   useToken = TRX
+   } else if USDD in interTokens && USDD balance is enough {
+	   useToken = USDD
+   } else if USDT in interTokens && USDT balance is enough {
+	   useToken = USDT
+   } else {
+	   return "unknow Token supports."
+   }
 }
 
 ```

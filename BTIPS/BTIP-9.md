@@ -15,7 +15,7 @@ We will need a mechanism to get the exchange rates between WBTT and the other to
 
 ## Abstract
 
-TODO
+Currently in BTFS, Upload files at the specified storage price of xxx WBTT/G/Month, and now plans to support more token prices. This gives you more options when uploading files on renters.
 
 ## Motivation
 
@@ -25,7 +25,15 @@ It is assumed that the storage price of BTFS is fixed (xxx WBTT/G/Month), and th
 
 ## Specification
 
-TODO
+### 1.Price Oracle Contract:
+- Set the WBTT as the base price. (xxx WBTT/G/Month)
+
+- Set other token(TRX/USDD/USDT) and WBTT conversion exchange rate. The price of other tokens will be calculated according to the exchange rate between them and WBTT.
+
+- Update the exchange rate value daily or regularly.
+
+### 2.Exchange rate reference
+The exchange rate will refer to the price of some large trading market sites, such as coinbase, huobi, binance.
 
 ## Rationale
 
