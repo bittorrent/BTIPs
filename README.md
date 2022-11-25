@@ -34,6 +34,6 @@ First review this README. Then clone the repository and add your BTIP to it. The
 
 |   ID   |    Title     | Author |  Type  | Category | Status |
 |  :---: | :----------: | :----: | :----: |  :----:  | :----: |
-| BTIP-1 |  [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)  | <shawn.huang@tron.network> | client api | | Review |
-| BTIP-2 |  [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)  | <laocheng.cheng@tron.network> | core protocal |Vault contract | Draft |
-| BTIP-9 |  [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md)  | <laocheng.cheng@tron.network> | core protocal |Vault contract | Idea |
+| BTIP-1 |  [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)  | <shawn.huang@tron.network> | client api | | Living |
+| BTIP-2 |  [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)  | <laocheng.cheng@tron.network> | core protocal |Vault contract | Final |
+| BTIP-9 |  [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md)  | <laocheng.cheng@tron.network> | core protocal |Vault contract | Final |
