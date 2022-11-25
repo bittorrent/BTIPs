@@ -3,7 +3,7 @@
 title: Vault contract support multi-tokens
 author: laocheng-cheng<laocheng.cheng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/2
-status: Draft
+status: Final
 type: Core Protocol
 category (*only required for Core Protocol): Vault contract
 created: 2022-10-17
@@ -140,4 +140,4 @@ true
 
 ## Implementation
 
-TODO
+https://github.com/bittorrent/go-btfs/pull/269

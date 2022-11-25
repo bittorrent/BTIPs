@@ -3,7 +3,7 @@
 title: Vault contract support multi-coin
 author: laocheng-cheng<laocheng.cheng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/9
-status: Idea
+status: Final
 type: Core Protocol
 category (*only required for Core Protocol): Vault contract
 created: 2022-10-21

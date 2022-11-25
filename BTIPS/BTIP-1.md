@@ -3,7 +3,7 @@
 title: Integrate with bittorrent
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/1
-status: Review
+status: Living
 type: Client API
 category (*only required for Core Protocol):
 created: 2022-09-30
@@ -129,4 +129,4 @@ true
 
 ## Implementation
 
-The implementations must be completed before any BTIP is given status "Final", but it need not be completed before the BTIP is accepted. While there is merit to the approach of reaching consensus on the specification and rationale before writing code, the principle of "rough consensus and running code" is still useful when it comes to resolving many discussions of API details.
+https://github.com/bittorrent/go-btfs/blob/pre_v2.3.0_union/core/commands/bittorrent.go
