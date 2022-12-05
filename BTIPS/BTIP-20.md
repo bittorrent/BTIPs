@@ -11,15 +11,14 @@ created: 2022-12-01
 
 ## Simple Summary
 
-As we all know, now our online proof is based on the bttc chain, and every node needs to report online data to bttc online contract once every day.It will spend node's gas.But recently we have seen this bttc proposal(https://github.com/bttcprotocol/bttc/issues/32).If it's accepted by bttc team the node will have to speed 300 times gas more that before.
-We think that maybe it's not necessary to report daily online proof every node every day. We can collect all this reports and calculate it as a merkle root.And we just need to report this merkle root to online contract once every day for all nodes!
+As we all know, now our online proof is based on the bttc chain, and every node needs to report online data to bttc online contract once every day. It will spend node's gas. But recently we think that maybe it's not necessary to report daily online proof every node every day. We can collect all this reports and calculate it as a merkle root. And we just need to report this merkle root to online contract once every day for all nodes!
 So that will save all the nodes gas and can prove it by merkle root.
 
 ## Abstract
 
 Merkle tree has been applied in a lot of situation of blockchain.
 It is used to verify any kind of data stored, handled and transferred in and between computers. They can help ensure that data blocks received from other peers in a peer-to-peer network are received undamaged and unaltered, and even to check that the other peers do not lie and send fake blocks.
-In this situation,we will save all the node's cryptographic info about online proof as a merkle tree. And report the merkle root into the online contract every day so that the miners and community can verify the historical data about online proof.
+In this situation, we will save all the node's cryptographic info about online proof as a merkle tree. And report the merkle root into the online contract every day so that the miners and community can verify the historical data about online proof.
 
 ## Motivation
 
@@ -33,9 +32,9 @@ Demonstrating that a leaf node is a part of a given binary hash tree requires co
 Merkle tree is a good way to prove the online status.And nobody can change the any node's value of merkle tree without changing it's merkle root.
 
 In this situation, the node can keep their online status to our centralized server.
-Centralized server sign a **Nonce** to the node.During the period time,very time the node report to centralized server,the **Nonce** will be increased(+1).Every day,every BTFS node will report a day-count **Nonce**.And centralized server collect all the node's report during this day.Build them as a merkle tree,save the tree to s3 or btfs publicly so that all nodes and community can check it.
+Centralized server sign a **Nonce** to the node.During the period time,very time the node report to centralized server, the **Nonce** will be increased(+1). Every day, every BTFS node will report a day-count **Nonce**. And centralized server collect all the node's report during this day.Build them as a merkle tree, save the tree to s3 or btfs publicly so that all nodes and community can check it.
 
-Then put this merkle root to online contract in BTTC chain.Now nobody can change all historical online proof.Every node can trust the data that centralized server provided by checking it's merkle root!
+Then put this merkle root to online contract in BTTC chain.Now nobody can change all historical online proof. Every node can trust the data that centralized server provided by checking it's merkle root!
 
 ## Rationale
 
@@ -55,7 +54,7 @@ assemble all lists into a merkle tree.
 
 ## Backwards Compatibility
 
-Something changed in this version of online proof.BTFS nodes doesn't need to report online proof to online contract.But the older version of BTFS node can continue to report to online contract and its age score won't have effects.
+Something changed in this version of online proof.BTFS nodes doesn't need to report online proof to online contract. But the older version of BTFS node can continue to report to online contract and its age score won't have effects.
 
 ## Test Cases
 
