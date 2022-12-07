@@ -3,7 +3,7 @@
 title: Use merekle root for online proofs
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/20
-status: Draft
+status: Last Call
 type: Core Protocal
 category (*only required for Core Protocol): Online Proof
 created: 2022-12-01
