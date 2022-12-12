@@ -129,4 +129,4 @@ true
 
 ## Implementation
 
-<https://github.com/bittorrent/go-btfs/blob/pre_v2.3.0/core/commands/bittorrent.go>
+<https://github.com/bittorrent/go-btfs/blob/v2.3.0/core/commands/bittorrent.go>
