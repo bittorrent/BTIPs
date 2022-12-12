@@ -3,7 +3,7 @@
 title: Use merekle root for online proofs
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/20
-status: Last Call
+status: Final
 type: Core Protocal
 category (*only required for Core Protocol): Online Proof
 created: 2022-12-01
@@ -60,4 +60,4 @@ Something changed in this version of online proof. BTFS nodes doesn't need to re
 
 ## Implementation
 
-TODO
+<https://github.com/bittorrent/go-btfs/pull/281/commits/4417f3c46a7ce4c1e14d09c8e371d9c7ee90c833>

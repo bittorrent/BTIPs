@@ -140,4 +140,4 @@ true
 
 ## Implementation
 
-https://github.com/bittorrent/go-btfs/pull/269
+<https://github.com/bittorrent/go-btfs/pull/269>
