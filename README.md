@@ -32,10 +32,10 @@ First review this README. Then clone the repository and add your BTIP to it. The
 
 ## All BTIPs list
 
-|   ID   |                              Title                               |              Author              |  Type  |     Category      | Status |
-|  :---: |:----------------------------------------------------------------:|:--------------------------------:| :----: |:-----------------:|:------:|
-| BTIP-1 |      [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)       |    <shawn.huang@tron.network>    | client api |                   | Living |
-| BTIP-2 |      [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)      |  <laocheng.cheng@tron.network>   | core protocal |  Vault contract   | Final  |
-| BTIP-9 | [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md) |  <laocheng.cheng@tron.network>   | core protocal |  Vault contract   | Final  |
-| BTIP-20 |      [Use merekle root for online proofs](BTIPS/BTIP-20.md)      |    <shawn.huang@tron.network>    | core protocal |   Online Proof    | Final  |
-| BTIP-25 |   [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)   | <steve.zhang@tron.network> | core protocal | S3-Compatible API | Review |
+|   ID   |                              Title                               |              Author              |  Type  |     Category      |  Status   |
+|  :---: |:----------------------------------------------------------------:|:--------------------------------:| :----: |:-----------------:|:---------:|
+| BTIP-1 |      [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)       |    <shawn.huang@tron.network>    | client api |                   |  Living   |
+| BTIP-2 |      [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)      |  <laocheng.cheng@tron.network>   | core protocal |  Vault contract   |   Final   |
+| BTIP-9 | [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md) |  <laocheng.cheng@tron.network>   | core protocal |  Vault contract   |   Final   |
+| BTIP-20 |      [Use merekle root for online proofs](BTIPS/BTIP-20.md)      |    <shawn.huang@tron.network>    | core protocal |   Online Proof    |   Final   |
+| BTIP-25 |   [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)   | <steve.zhang@tron.network> | core protocal | S3-Compatible API | Last Call |
