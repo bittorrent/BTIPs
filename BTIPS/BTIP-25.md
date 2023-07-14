@@ -3,10 +3,11 @@
 title: Integrate with S3-Compatible API service
 author: Steve Zhang<steve.zhang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/25
-status: Review
+status: Last Call
 type: Core Protocol
 category (*only required for Core Protocol): S3-Compatible API
 created: 2023-07-06
+last-call-deadline: 2023-07-21
 ```
 
 ## Simple Summary
@@ -15,18 +16,23 @@ Add an AWS S3-Compatible API service on BTFS protocol implementation.
 
 ## Abstract
 
-In the implementation of BTFS protocol, we integrate an adapter, which provides HTTP API service, converts the received request in S3 format into BTFS native request for calling, and then converts the obtained native response into S3 format response and return the response, so as to achieve compatibility with the S3 interface protocol.
+An adaptation layer compatible with the AWS S3 API is created in the BTFS protocol implementation. This layer exposes external-facing AWS S3-compatible API services and translates incoming AWS S3 object operations into corresponding operations for BTFS resources.
 
 ## Motivation
 
-As a second-generation centralized cloud storage solution, AWS S3 has been widely used, and a large number of applications are based on its API protocol or SDK access. As a third-generation decentralized storage protocol, BTFS currently has a relatively narrow application range. If an application wants to access BTFS, it needs to redesign and develop an interface protocol based on BTFS. If the BTFS service itself can provide a set of AWS S3-compatible interface services, then these applications can access BTFS at a small cost, or can directly use BTFS as an optional transparent storage layer.
+AWS S3 is widely adopted as a second-generation centralized cloud storage solution, allowing multitudinous applications to access it through its API protocol or SDKs. In contrast, BTFS as a third-generation decentralized storage protocol has yet to gain popularity, which means developers must redesign and develop their applications to be compatible with BTFS's API protocol. However, with a set of AWS S3-compatible API services from BTFS, it would be far easier for applications to be connected to BTFS or use it as an optional transparent storage layer.
 
 ## Specification
 
-### Configuration and start command options
+###  Add configuration and start command options
 
-#### 1. Add a new S3CompatibleAPI configuration field under the configuration file
-```json
+In the configuration file, you can now find a new section called S3CompatibleAPI which includes three options:
+
+- Enable: This option determines whether to enable the S3-compatible API. Please note that its priority is lower than the daemon start command option.
+- Address: Use this option to configure the service address for the S3-compatible API. Keep in mind that it can be accessed externally when the address is non-local.
+- HTTPHeaders: Use this option to configure the response headers for the S3-compatible API service. It can also be used to set up cross-domain rules.
+
+```text
    {
      ...
      "S3CompatibleAPI": {
@@ -50,26 +56,21 @@ As a second-generation centralized cloud storage solution, AWS S3 has been widel
    }
 ```
 
-- Enable: Used to configure the enabled state of S3-compatibleAPI, the priority is lower than the daemon startup command option
-- Address: It is used to configure the service address of the S3-compatible API. Note that when the address is configured as a non-local address, it may also be accessed externally
-- HTTPHeaders: Used to configure the response headers of S3-compatible API services, which can be used to configure cross-domain rules
-
-#### 2. Add a string type option 's3-compatible-api' to the startup command to specify whether to enable the S3API service. 
+Additionally, we have introduced a new string-type option 's3-compatible-api' in the start command. This option allows you to enable or disable the S3API service. Set it to 'enable' to start the service or 'disable' to prevent it from starting. By default, it is left empty, meaning that the value will be determined by the 'EnableS3API' field in the configuration file.
 
 ```shell
   btfs daemon --s3-compatible-api=enable
 ```
 
-When it is "enable", it means that it is started, when it is "disable", it means that it is not started. The default is "", which means that it is enabled by the S3CompatibleAPI.EnableS3 in the configuration
-
 ### Access Keys related commands. 
 
-Access Keys is used for S3 interface access authentication. Each Access Key record consists of key, secret, root, enable, and created_at fields. 
-- key: the key of the key
-- secret: key
-- root: The root path of the key used in the BTFS mfs system, consisting of "/ + random directory name", each Access Key can only create a Bucket under its corresponding root
-- enable: indicates whether to enable the Access Key, the default is true, when the value is false, the request corresponding to the Access Key will be invalid
-- created_at: the creation time of the Access Key record
+Add access key-related commands. Access keys are used for authenticating S3 API access requests, and each access key record consists of the key, secret, root, enable, and created_at fields:
+
+- key: the id of the access key.
+- secret: the secret of the access key.
+- root: The root path of the key used in the BTFS mfs system, consisting of "/ + random directory name", each Access Key can only create a Bucket under its corresponding root.
+- enable: indicates whether to enable the Access Key, the default is true, when the value is false, the request corresponding to the Access Key will be invalid.
+- created_at: the creation time of the access key record.
 
 #### 1. Generate Access Key
 ```shell
@@ -111,12 +112,13 @@ The BTFS S3-compatible API only supports [AWS v4 signatures (AWS4-HMAC-SHA256)](
 
 ### Access Control Lists (ACLs)
 
-- The BTFS S3-compatible API features limited support for Access Control Lists (ACLs). Object-level ACLs are currently not supported. The GetObjectAcl and GetBucketAcl methods will work as expected, but the GetObjectAcl response will return the ACL of the bucket that the object is contained in.
-- The owner of the bucket is the Access Key when the Bucket was created (modification is currently not supported). Only the owner of the Bucket can modify the ACL of the Bucket and delete the Bucket.
-- Supported predefined ACLs are: private, public-read, public-read-write, for detailed definitions see: AWS ACL, the default permission is public-read.
-- __private__: Only the bucket owner can upload, delete, and read objects under the bucket, and read the object list under the bucket.
-- __public-read__: Only the bucket owner can upload and delete objects under the bucket, but public users (including anonymous users) can read objects and read the object list under the bucket.
-- __public-read-write__: public users (including anonymous users) can upload, delete, read objects under the bucket, and read the list of objects under the bucket.
+- The BTFS S3-compatible API provides limited support for access control lists (ACLs), with no current support for object-level ACLs.
+- The methods GetObjectAcl and GetBucketAcl will work as expected, but GetObjectAcl will return the ACL of the bucket it is in.
+- A bucket's owner is the access key used to create the bucket (access keys cannot be changed at present), and only the owner can change the ACL of a bucket or delete the bucket.
+- Supported predefined ACLs include private, public-read, and public-read-write; see AWS ACL for detailed definitions; permissions, by default, are set to public-read.
+    - __private__: nly the bucket owner can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
+    - __public-read__: public-read: only the bucket owner can upload and delete objects in the bucket; however, public users, including anonymous ones, can read objects and the list of the objects inside the bucket.
+    - __public-read-write__: public-read-write: public users, including anonymous ones, can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
 
 ### Supported API methods
 
