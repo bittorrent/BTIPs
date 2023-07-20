@@ -1,5 +1,6 @@
 
-```btip: 25
+```
+BTIP: 25
 title: Integrate with S3-Compatible API service
 author: Steve Zhang<steve.zhang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/25
