@@ -116,7 +116,7 @@ The BTFS S3-compatible API only supports [AWS v4 signatures (AWS4-HMAC-SHA256)](
 - The methods GetObjectAcl and GetBucketAcl will work as expected, but GetObjectAcl will return the ACL of the bucket it is in.
 - A bucket's owner is the access key used to create the bucket (access keys cannot be changed at present), and only the owner can change the ACL of a bucket or delete the bucket.
 - Supported predefined ACLs include private, public-read, and public-read-write; see AWS ACL for detailed definitions; permissions, by default, are set to public-read.
-    - __private__: nly the bucket owner can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
+    - __private__: only the bucket owner can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
     - __public-read__: public-read: only the bucket owner can upload and delete objects in the bucket; however, public users, including anonymous ones, can read objects and the list of the objects inside the bucket.
     - __public-read-write__: public-read-write: public users, including anonymous ones, can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
 
@@ -151,7 +151,7 @@ The BTFS S3-compatible API only supports [AWS v4 signatures (AWS4-HMAC-SHA256)](
 
 ### Methods for obtaining BTFS Hash
 
-You can Get ipfs hash from object metadata.
+You can get btfs hash from object metadata.
 Object metadata key:
 
 ```json
