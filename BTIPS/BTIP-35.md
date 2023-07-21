@@ -1,7 +1,7 @@
 
 ```
 BTIP: 35
-title: Provide Command To Encode/Decode The Content
+title: Support Multibase Command To Encode/Decode The Content
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/35
 status: Idea
