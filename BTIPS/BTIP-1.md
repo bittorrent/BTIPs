@@ -1,5 +1,6 @@
 
-```btip: 1
+```
+BTIP: 1
 title: Integrate with bittorrent
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/1

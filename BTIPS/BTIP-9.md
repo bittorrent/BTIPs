@@ -1,5 +1,6 @@
 
-```btip: 9
+```
+BTIP: 9
 title: Vault contract support multi-coin
 author: laocheng-cheng<laocheng.cheng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/9

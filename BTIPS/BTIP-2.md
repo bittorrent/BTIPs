@@ -1,5 +1,6 @@
 
-```btip: 2
+```
+BTIP: 2
 title: Vault contract support multi-tokens
 author: laocheng-cheng<laocheng.cheng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/2
