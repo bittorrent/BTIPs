@@ -47,15 +47,18 @@ btfs recovery  -r ./btfs_backup.tar.gz
 
 ## Rationale
 
-1. The `backup` command will check if `btfs daemon` is running to prevent backing up the repo lock.
-2. If `btfs daemon` is running, the `backup` command will prompt you to stop the process.
-3. If `btfs daemon` is not running, `backup` will continue to proceed and see if the environment variable `BTFS_PATH` exists.
+1. The `backup` command will check if `repo.lock` is holded to prevent inconsistency of data during backup.
+2. If `repo.lock` is holded by another process, the `backup` command will prompt you to stop the process.
+3. If `repo.lock` is not holded, `backup` will hold `repo.lock` and see if the environment variable `BTFS_PATH` exists.
 4. If it exists, this variable will be viewed as the target path, otherwise it will use `~/.btfs` as the default target path.
 5. The `backup` command will output the backup file to the path specified by the `-o` option.
-6. The `recovery` command will check if BTFS is initialized before proceeding. It is recommended not to initialize BTFS on a new machine if recovery is intended.
-7. Similar to the the `backup` command, the `recovery` command will also check if `btfs daemon` is running to prevent backing up the repo lock.
+6. After backup, the `repo.lock` will be released.
+7. The `recovery` command will check if BTFS is initialized before proceeding. It is recommended not to initialize BTFS on a new machine if recovery is intended.
 8. If BTFS is not initialized, the `recovery` command will restore the archived file specified by the `-r` option into the BTFS data path (environment variable `BTFS_PATH` if exists or `~/.btfs`).
-9. Alternatively, using `btfs init --recovery ./btfs_backup.tar.gz` is recommended for file recovery.
+9. If BTFS has been initialized, the `recovery` command will backup BTFS data into another directory and continue to proceed as previous step.
+10. Alternatively, using `btfs init --recovery ./btfs_backup.tar.gz` is recommended for file recovery.
+
+**NOTE:** During the backup, any operation try to modify the file of BTFS data will fail to prevent inconsistency.
 
 ## Backwards Compatibility
 
