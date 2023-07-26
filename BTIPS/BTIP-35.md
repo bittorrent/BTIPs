@@ -12,15 +12,15 @@ created: 2023-07-21
 
 ## Simple Summary
 
-The HTTP API has a few endpoints that return newline-delimited JSON which is used to stream responses to the client.
+When streaming responses to clients, some of the HTTP APIs send newline-delimited JSON.
 
-One such API is `pubsub/sub`. The problem here is that the data is sent as an ASCII-encoded string with no escaping so can include the newline character code which our HTTP client then interprets (not unreasonably) as ending the current line.
+One typical example is `pubsub/sub`. It sends data as an ASCII-encoded string with escape characters, which might cause problems when the HTTP client parses the string (i.e. a newline character might cause the HTTP client to stop parsing the string).
 
 The `btfs multibase` commands can solve this problem by encoding/decoding the content.
 
 ## Motivation
 
-This topic is intended to facilitate the user's ability to encode/decode documents and text by providing different types of multibase commands.
+This feature aims to help users encode/decode documents and texts by providing different types of multibase commands.
 
 ## Specification
 
@@ -105,8 +105,7 @@ DESCRIPTION
 
 ### btfs multibase list
 
-This is alias/same command as pre-existing `btfs cid bases`.
-Decided to add it here as well for completeness and better UX.
+This is the same command as, or the alias of the existing command btfs cid bases. It is added here for better UX.
 
 ```shell
 > btfs multibase list --help
@@ -148,9 +147,8 @@ Z    90  base58flickr
 
 ## Backwards Compatibility
 
-YES. It's a new feature and won't bring any break changes.
+This new feature is backward-compatible and won’t cause breaking changes.
 
 ## Test Cases
 
 ## Implementation
-
