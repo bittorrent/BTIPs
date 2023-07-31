@@ -4,7 +4,7 @@ BTIP: 30
 title: Simplify Backup and Recovery of BTFS Data
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/30
-status: Draft
+status: Review
 type: Client API
 category (*only required for Core Protocol): 
 created: 2023-07-20
