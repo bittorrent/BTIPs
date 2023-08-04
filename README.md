@@ -39,5 +39,5 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | BTIP-9 | [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md) |  <laocheng.cheng@tron.network>   | core protocal |  Vault contract   | Final  |
 | BTIP-20 |      [Use merekle root for online proofs](BTIPS/BTIP-20.md)      |    <shawn.huang@tron.network>    | core protocal |   Online Proof    | Final  |
 | BTIP-25 |   [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)   | <steve.zhang@tron.network> | core protocal | S3-Compatible API | Final |
-| BTIP-30 |   [Simplify Backup and Recovery of BTFS Data](BTIPS/BTIP-30.md)   | <shawn.huang@tron.network> | client api |                     | Review |
-| BTIP-35 |   [Support Multibase Command To Encode/Decode The Content](BTIPS/BTIP-35.md)   | <shawn.huang@tron.network> | client api |                     | Draft |
+| BTIP-30 |   [Simplify Backup and Recovery of BTFS Data](BTIPS/BTIP-30.md)   | <shawn.huang@tron.network> | client api |                     | Last Call |
+| BTIP-35 |   [Support Multibase Command To Encode/Decode The Content](BTIPS/BTIP-35.md)   | <shawn.huang@tron.network> | client api |                     | Review |
