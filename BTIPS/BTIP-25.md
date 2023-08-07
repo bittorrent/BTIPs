@@ -89,7 +89,7 @@ btfs accesskey enable <key>
 btfs accesskey disable <key>
 ```
 
-#### 4. reset Access Key
+#### 4. Reset Access Key
 ```shell
 btfs accesskey reset <key>
 ```
