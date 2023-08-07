@@ -99,7 +99,7 @@ Note: this operation will only reset the secret associated with the key.
 btfs accesskey delete <key>
 ```
 
-### 6. Get Access Key
+#### 6. Get Access Key
 ```shell
 btfs accesskey get <key>
 {"created_at":"2023-08-07T11:40:01.687592+08:00","enable":true,"is_deleted":false,"key":"d3ffb975-7f86-458c-ac09-76e976c8ca56","secret":"I5qW3xIdwYI4EzE51zx7UErK89BQvpN5","updated_at":"2023-08-07T11:43:15.624528+08:00"}
