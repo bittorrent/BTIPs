@@ -65,45 +65,51 @@ Additionally, we have introduced a new string-type option 's3-compatible-api' in
 
 Add access key-related commands. Access keys are used for authenticating S3 API access requests, and each access key record consists of the key, secret, root, enable, and created_at fields:
 
-- key: the id of the access key.
-- secret: the secret of the access key.
-- root: The root path of the key used in the BTFS mfs system, consisting of "/ + random directory name", each Access Key can only create a Bucket under its corresponding root.
-- enable: indicates whether to enable the Access Key, the default is true, when the value is false, the request corresponding to the Access Key will be invalid.
-- created_at: the creation time of the access key record.
+- key: the id of the access-key.
+- secret: the secret of the access-key.
+- enable: indicates whether to enable the access-key, the default is true, when the value is false, the request corresponding to the access-key will be invalid.
+- is_deleted: indicates whether the access-key has been deleted.
+- created_at: the creation time of the access-key record.
+- updated_at: the update time of the access-key record.
 
 #### 1. Generate Access Key
 ```shell
-btfs s3-keys generate
-{"key":"xxx","secret":"xxx","root":"/xxx","enable":true,"created_at":"xxxx-xx-xx xx:xx:xx"}
+btfs accesskey generate
+{"created_at":"2023-08-07T11:40:01.687592+08:00","enable":true,"is_deleted":false,"key":"d3ffb975-7f86-458c-ac09-76e976c8ca56","secret":"HK4A72rwC3XGWvqPBH2ZYrx4s2drSsIT","updated_at":"2023-08-07T11:40:01.687592+08:00"}
 ```
 
-#### 2. Disable Access Key
-
+#### 2. Enable Access key
 ```shell
-btfs s3-keys disable <key>
+btfs accesskey enable <key>
 ```
 
-#### 3. List all Access Keys
-
+#### 3. Disable Access Key
 ```shell
-btfs s3-keys list
-[{"key":"xxx","secret":"xxx","root":"/xxx","enable":true,"created_at":"xxxx-xx-xx xx:xx:xx"},{"key":"xxx","secret":"xxx","root":"/xxx","enable":true,"created_at":"xxxx-xx-xx xx:xx:xx"}]
+btfs accesskey disable <key>
 ```
 
-#### 4. Delete Access Key
-
+#### 4. reset Access Key
 ```shell
-btfs s3-keys delete <key>
+btfs accesskey reset <key>
 ```
-
-#### 5. Reset Access Key
-
-```shell
-btfs s3-keys reset <key>
-{"key":"xxx","secret":"xxx","root":"/xxx","enable":true,"created_at":"xxxx-xx-xx xx:xx:xx"}
-```
-
 Note: this operation will only reset the secret associated with the key.
+
+#### 5. Delete Access Key
+```shell
+btfs accesskey delete <key>
+```
+
+### 6. Get Access Key
+```shell
+btfs accesskey get <key>
+{"created_at":"2023-08-07T11:40:01.687592+08:00","enable":true,"is_deleted":false,"key":"d3ffb975-7f86-458c-ac09-76e976c8ca56","secret":"I5qW3xIdwYI4EzE51zx7UErK89BQvpN5","updated_at":"2023-08-07T11:43:15.624528+08:00"}
+```
+
+#### 7. List all Access Keys
+```shell
+btfs accesskey list
+[{"created_at":"2023-07-27T22:09:28.849721+08:00","enable":true,"is_deleted":false,"key":"afe9fbcd-5b05-4287-822b-5077e4ec48f7","secret":"V7PQE2N5YqsODDQH6RYpVMP0k1aZ5SN4","updated_at":"2023-07-27T22:10:53.804098+08:00"},{"created_at":"2023-08-07T11:40:01.687592+08:00","enable":true,"is_deleted":false,"key":"d3ffb975-7f86-458c-ac09-76e976c8ca56","secret":"I5qW3xIdwYI4EzE51zx7UErK89BQvpN5","updated_at":"2023-08-07T11:43:15.624528+08:00"}]
+```
 
 ### Authentication
 
