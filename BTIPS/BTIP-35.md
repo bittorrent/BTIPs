@@ -4,7 +4,7 @@ BTIP: 35
 title: Support Multibase Command To Encode/Decode The Content
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/35
-status: Review
+status: Last Call
 type: Client API
 category (*only required for Core Protocol):
 created: 2023-07-21
