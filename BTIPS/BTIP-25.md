@@ -37,7 +37,7 @@ In the configuration file, you can now find a new section called S3CompatibleAPI
      ...
      "S3CompatibleAPI": {
        "Enable": false,
-       "Address": "127.0.0.1:5201",
+       "Address": "127.0.0.1:6001",
        "HTTPHeaders": {
          "Access-Control-Allow-Headers": [
            "X-Requested-With",
@@ -56,10 +56,18 @@ In the configuration file, you can now find a new section called S3CompatibleAPI
    }
 ```
 
-Additionally, we have introduced a new string-type option 's3-compatible-api' in the start command. This option allows you to enable or disable the S3API service. Set it to 'enable' to start the service or 'disable' to prevent it from starting. By default, it is left empty, meaning that the value will be determined by the 'EnableS3API' field in the configuration file.
+Additionally, we have introduced a new bool-type option 's3-compatible-api' in the start command. This option allows you to enable or disable the S3API service. Set it to 'true' to start the service or 'false' to prevent it from starting. By default, it is not set, meaning that the value will be determined by the 'EnableS3API' field in the configuration file.
 
 ```shell
-  btfs daemon --s3-compatible-api=enable
+  # enable the s3-compatible-api server
+  btfs daemon --s3-compatible-api
+  btfs daemon --s3-compatible-api=true
+  
+  # disable the s3-compatible-api server
+  btfs daemon --se-compatible-api=false
+  
+  # enable or disable s3-compatible-api server according to the S3CompatibleAPI.Enable field in the configuration file.
+  btfs daemon
 ```
 
 ### Access Keys related commands. 
