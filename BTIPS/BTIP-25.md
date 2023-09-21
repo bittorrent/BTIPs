@@ -172,7 +172,7 @@ Cid=<BTFS Cid>
 
 #### 1. Structure
 
-![S3-Compatible API structure](../pictures/s3-compatible-api.png)
+![S3-Compatible API structure](../pictures/s3-compatible-api-structure.png)
 
 - S3-Compatible-API base on the original BTFS API and an extra Object-Meta module.
 - The Object-Meta module is a service used to store and manage bucket/object metadata.
