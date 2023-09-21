@@ -38,19 +38,7 @@ In the configuration file, you can now find a new section called S3CompatibleAPI
      "S3CompatibleAPI": {
        "Enable": false,
        "Address": "127.0.0.1:6001",
-       "HTTPHeaders": {
-         "Access-Control-Allow-Headers": [
-           "X-Requested-With",
-           "Range",
-           "User-Agent"
-         ],
-         "Access-Control-Allow-Methods": [
-           "GET"
-         ],
-         "Access-Control-Allow-Origin": [
-           "*"
-         ]
-       }
+       "HTTPHeaders": null
      },
      ...
    }
@@ -165,15 +153,19 @@ The BTFS S3-compatible API only supports [AWS v4 signatures (AWS4-HMAC-SHA256)](
 
 ### Methods for obtaining BTFS Hash
 
-You can get btfs hash from object metadata.
-Object metadata key:
+You can get btfs hash from object metadata and response header.
+- Object metadata key:
 
 ```json
 {
    "Metadata": {
-      "btfs-hash": "btfs cid"
+      "Cid": "<BTFS cid>"
    }
 }
+```
+- Response header
+```
+Cid=<BTFS Cid>
 ```
 
 ## Rationale
