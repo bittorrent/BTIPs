@@ -170,35 +170,19 @@ Cid=<BTFS Cid>
 
 ## Rationale
 
-#### 1. Compatible adapter: convert the received S3 standard request into BTFS native API request and execute it, then convert the BTFS native API response into S3 standard response and return
+#### 1. Structure
 
-![S3-Compatible API structure](../pictures/s3-compatible-api.png)
+![S3-Compatible API structure](../pictures/s3-compatible-api-structure.png)
 
-- Start the S3-Compatible API server when start the BTFS daemon.
-- Accept S3 standard request.
-- Check the request authentication.
-- Convert S3 standard request to a BTFS original request.
-- Do BTFS original request, and gain the BTFS original response.
-- Convert BTFS original response to S3 standard response.
-- Return the S3 standard response.
-
-```text
-function handle_s3_request(s3_request) {
-    ok = check_s3_request_auth(s3_request);
-    if (!ok) {
-        return auth_failed_error;
-    }
-    original_request = convert_s3_request_to_original_request(s3_request);
-    original_response = do_original_request(original_request);
-    s3_response = convert_original_response_to_s3_response(original_response);
-    return s3_response;
-}
-```
+- S3-Compatible-API base on the original BTFS API and an extra Object-Meta module.
+- The Object-Meta module is a service used to store and manage bucket/object metadata.
+- BTFS will also integrate with an Access-Key module, this module used to store and manage access-keys of the S3-Compatible-API.
+- S3-Compatible-API server should be a independent module and can be separately started from the BTFS daemon.
 
 #### 2. Start S3-Compatible API server according to the corresponding configuration or startup command options.
 
 ```text
-if (option.s3-compatible-api == "enalbe" || (option.s3-compatible-api == "" && config.S3CompatibleAPI.Enable == true) {
+if (option.s3-compatible-api == "true" || (option.s3-compatible-api == "" && config.S3CompatibleAPI.Enable == true) {
     start_s3_compatible_api_server(config.Address.S3CompatibleAPI);
 }
 ```
@@ -206,52 +190,17 @@ if (option.s3-compatible-api == "enalbe" || (option.s3-compatible-api == "" && c
 #### 3. Generate Access Key
 
 ```text
-function generate_access_key() {
+function generate_access_key() (object access_key) {
     key = random_string(key_length);
     secret = random_string(secret_length);
-    ok = false;
-    while(!ok) {
-        root = path_join("/", random_dir_name());
-        ok = btfs_files_mkdir(root);
-    }
     access_key = {
         "key": key,
         "secret": secret,
-        "root": root,
         "enable": true,
         "created_at": now()
     }
     store_access_key(access_key);
     return access_key;
-}
-```
-
-#### 4. Create bucket
-
-```text
-function convert_s3_create_bucket_request_to_original_files_mkdir_request(s3_create_bucket_request) {
-    access_key = get_access_key(s3_create_bucket_request.key);
-    original_files_mkdir_request.path = join_path(access_key.root, create_bucket_request.bucket_name);
-    return original_files_mkdir_request;
-}
-     
-function handle_s3_create_bucket_request(s3_create_bucket_request) {
-    ok = check_s3_request_auth(s3_create_bucket_request);
-    if (!ok) {
-        return auth_failed_error;
-    }
-    original_files_mkdir_request = convert_s3_create_bucket_request_to_original_files_mkdir_request(s3_create_bucket_request);
-    original_files_mkdir_response = do_original_files_mkdir_request(original_files_mkdir_request);
-    bucket_info = {
-        "owner": access_key.key,
-        "bucke_name": create_bucket_request.bucket_name,
-        "path": original_files_mkdir_request.path,
-        "cid": original_files_mkdir_response.cid,
-        "acl": create_bucket_request.acl,
-        "created_at": now()
-    }
-    store_bucket_info(bucket_info);
-    return
 }
 ```
 
