@@ -52,7 +52,7 @@ Additionally, we have introduced a new bool-type option 's3-compatible-api' in t
   btfs daemon --s3-compatible-api=true
   
   # disable the s3-compatible-api server
-  btfs daemon --se-compatible-api=false
+  btfs daemon --s3-compatible-api=false
   
   # enable or disable s3-compatible-api server according to the S3CompatibleAPI.Enable field in the configuration file.
   btfs daemon
