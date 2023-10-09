@@ -32,12 +32,13 @@ First review this README. Then clone the repository and add your BTIP to it. The
 
 ## All BTIPs list
 
-|   ID   |                              Title                               |              Author              |  Type  |     Category      | Status |
-|  :---: |:----------------------------------------------------------------:|:--------------------------------:| :----: |:-----------------:|:------:|
-| BTIP-1 |      [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)       |    <shawn.huang@tron.network>    | client api |                   | Living |
-| BTIP-2 |      [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)      |  <laocheng.cheng@tron.network>   | core protocal |  Vault contract   | Final  |
-| BTIP-9 | [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md) |  <laocheng.cheng@tron.network>   | core protocal |  Vault contract   | Final  |
-| BTIP-20 |      [Use merekle root for online proofs](BTIPS/BTIP-20.md)      |    <shawn.huang@tron.network>    | core protocal |   Online Proof    | Final  |
-| BTIP-25 |   [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)   | <steve.zhang@tron.network> | core protocal | S3-Compatible API | Final |
-| BTIP-30 |   [Simplify Backup and Recovery of BTFS Data](BTIPS/BTIP-30.md)   | <shawn.huang@tron.network> | client api |                     | Final |
-| BTIP-35 |   [Support Multibase Command To Encode/Decode The Content](BTIPS/BTIP-35.md)   | <shawn.huang@tron.network> | client api |                     | Final |
+|   ID    |                              Title                               |            Author             |     Type      |     Category      | Status |
+|:-------:|:----------------------------------------------------------------:|:-----------------------------:|:-------------:|:-----------------:|:------:|
+| BTIP-1  |      [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)       |  <shawn.huang@tron.network>   |  client api   |                   | Living |
+| BTIP-2  |      [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)      | <laocheng.cheng@tron.network> | core protocal |  Vault contract   | Final  |
+| BTIP-9  | [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md) | <laocheng.cheng@tron.network> | core protocal |  Vault contract   | Final  |
+| BTIP-20 |      [Use merekle root for online proofs](BTIPS/BTIP-20.md)      |  <shawn.huang@tron.network>   | core protocal |   Online Proof    | Final  |
+| BTIP-25 |   [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)   |  <steve.zhang@tron.network>   | core protocal | S3-Compatible API | Final  |
+| BTIP-30 |   [Simplify Backup and Recovery of BTFS Data](BTIPS/BTIP-30.md)   |  <shawn.huang@tron.network>   |  client api   |                     | Final  |
+| BTIP-35 |   [Support Multibase Command To Encode/Decode The Content](BTIPS/BTIP-35.md)   |  <shawn.huang@tron.network>   |  client api   |                     | Final  |
+| BTIP-54 |   [Decentralize node score calculation](BTIPS/BTIP-54.md)   |  <steve.zhang@tron.network>   | core protocal |                     | Draft  |
