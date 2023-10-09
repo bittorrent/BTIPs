@@ -4,7 +4,7 @@ BTIP: 25
 title: Integrate with S3-Compatible API service
 author: Steve Zhang<steve.zhang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/25
-status: Final
+status: Living 
 type: Core Protocol
 category (*only required for Core Protocol): S3-Compatible API
 created: 2023-07-06
