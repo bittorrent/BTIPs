@@ -1,7 +1,7 @@
 
 ```
 BTIP: 54
-title: Decentralized node score calculation
+title: Decentralize node score calculation
 author: Steve Zhang<steve.zhang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/54
 status: Draft
@@ -12,7 +12,7 @@ created: 2023-10-09
 
 ## Simple Summary
 
-Decentralized node score calculation
+Decentralize node score calculation
 
 ## Abstract
 
