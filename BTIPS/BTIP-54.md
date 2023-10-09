@@ -7,7 +7,7 @@ discussions-to: https://github.com/bittorrent/BTIPs/issues/54
 status: Draft
 type: Core Protocol
 category (*only required for Core Protocol):
-created: 2023-07-06
+created: 2023-10-09
 ```
 
 ## Simple Summary
