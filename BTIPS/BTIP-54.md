@@ -12,7 +12,7 @@ created: 2023-10-09
 
 ## Simple Summary
 
-Decentralized node score `calculation`
+Decentralized node score calculation
 
 ## Abstract
 
