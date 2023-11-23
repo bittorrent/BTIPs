@@ -4,7 +4,8 @@ BTIP: 52
 title: File share with encryption
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/52
-status: Review
+status: Last Call
+last-call-deadline: 2023-12-08
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2023-09-28
