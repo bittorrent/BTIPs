@@ -24,7 +24,7 @@ AWS S3 is widely adopted as a second-generation centralized cloud storage soluti
 
 ## Specification
 
-###  Add configuration and start command options
+### Add configuration and start command options
 
 In the configuration file, you can now find a new section called S3CompatibleAPI which includes three options:
 
@@ -58,7 +58,7 @@ Additionally, we have introduced a new bool-type option 's3-compatible-api' in t
   btfs daemon
 ```
 
-### Access Keys related commands. 
+### Access Keys related commands
 
 Add access key-related commands. Access keys are used for authenticating S3 API access requests, and each access key record consists of the key, secret, root, enable, and created_at fields:
 
@@ -70,39 +70,47 @@ Add access key-related commands. Access keys are used for authenticating S3 API 
 - updated_at: the update time of the access-key record.
 
 #### 1. Generate Access Key
+
 ```shell
 btfs accesskey generate
 {"created_at":"2023-08-07T11:40:01.687592+08:00","enable":true,"is_deleted":false,"key":"d3ffb975-7f86-458c-ac09-76e976c8ca56","secret":"HK4A72rwC3XGWvqPBH2ZYrx4s2drSsIT","updated_at":"2023-08-07T11:40:01.687592+08:00"}
 ```
 
 #### 2. Enable Access key
+
 ```shell
 btfs accesskey enable <key>
 ```
 
 #### 3. Disable Access Key
+
 ```shell
 btfs accesskey disable <key>
 ```
 
 #### 4. Reset Access Key
+
 ```shell
 btfs accesskey reset <key>
 ```
+
 Note: this operation will only reset the secret associated with the key.
 
 #### 5. Delete Access Key
+
 ```shell
 btfs accesskey delete <key>
 ```
 
 #### 6. Get Access Key
+
 ```shell
 btfs accesskey get <key>
 {"created_at":"2023-08-07T11:40:01.687592+08:00","enable":true,"is_deleted":false,"key":"d3ffb975-7f86-458c-ac09-76e976c8ca56","secret":"I5qW3xIdwYI4EzE51zx7UErK89BQvpN5","updated_at":"2023-08-07T11:43:15.624528+08:00"}
 ```
 
 #### 7. List all Access Keys
+
 ```shell
 btfs accesskey list
 [{"created_at":"2023-07-27T22:09:28.849721+08:00","enable":true,"is_deleted":false,"key":"afe9fbcd-5b05-4287-822b-5077e4ec48f7","secret":"V7PQE2N5YqsODDQH6RYpVMP0k1aZ5SN4","updated_at":"2023-07-27T22:10:53.804098+08:00"},{"created_at":"2023-08-07T11:40:01.687592+08:00","enable":true,"is_deleted":false,"key":"d3ffb975-7f86-458c-ac09-76e976c8ca56","secret":"I5qW3xIdwYI4EzE51zx7UErK89BQvpN5","updated_at":"2023-08-07T11:43:15.624528+08:00"}]
@@ -118,13 +126,13 @@ The BTFS S3-compatible API only supports [AWS v4 signatures (AWS4-HMAC-SHA256)](
 - The methods GetObjectAcl and GetBucketAcl will work as expected, but GetObjectAcl will return the ACL of the bucket it is in.
 - A bucket's owner is the access key used to create the bucket (access keys cannot be changed at present), and only the owner can change the ACL of a bucket or delete the bucket.
 - Supported predefined ACLs include private, public-read, and public-read-write; see AWS ACL for detailed definitions; permissions, by default, are set to public-read.
-    - __private__: only the bucket owner can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
-    - __public-read__: only the bucket owner can upload and delete objects in the bucket; however, public users, including anonymous ones, can read objects and the list of the objects inside the bucket.
-    - __public-read-write__: public users, including anonymous ones, can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
+  - __private__: only the bucket owner can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
+  - __public-read__: only the bucket owner can upload and delete objects in the bucket; however, public users, including anonymous ones, can read objects and the list of the objects inside the bucket.
+  - __public-read-write__: public users, including anonymous ones, can upload, delete, and read objects in the bucket, as well as read the list of the objects inside the bucket.
 
 ### Supported API methods
 
-#### 1. Supported Bucket Calls:
+#### 1. Supported Bucket Calls
 
 - CreateBuket
 - HeadBucket
@@ -133,7 +141,7 @@ The BTFS S3-compatible API only supports [AWS v4 signatures (AWS4-HMAC-SHA256)](
 - PutBucketAcl
 - GetBucketAcl
 
-#### 2. Supported Object Calls:
+#### 2. Supported Object Calls
 
 - ListObjects
 - ListObjectsV2
@@ -144,16 +152,19 @@ The BTFS S3-compatible API only supports [AWS v4 signatures (AWS4-HMAC-SHA256)](
 - DeleteObjects
 - GetObjectAcl
 
-#### 3. Supported Multipart Calls:
+#### 3. Supported Multipart Calls
 
-- CreateMultipartUpload	
+- CreateMultipartUpload 
 - AbortMultipartUpload
 - CompleteMultipartUpload
 - UploadPart
 
+#### Note: Now we support loose mode which means that we don't check some params or headers that the client send, but if we don't support this kind of params or headers, maybe they won't effect. We just ignore them instead of refusing the request which causes the failure of this request
+
 ### Methods for obtaining BTFS Hash
 
 You can get btfs hash from object metadata and response header.
+
 - Object metadata key:
 
 ```json
@@ -163,14 +174,16 @@ You can get btfs hash from object metadata and response header.
    }
 }
 ```
+
 - Response header
-```
+
+```shell
 Cid=<BTFS Cid>
 ```
 
 ## Rationale
 
-#### 1. Structure
+### 1. Structure
 
 ![S3-Compatible API structure](../pictures/s3-compatible-api-structure.png)
 
@@ -179,7 +192,7 @@ Cid=<BTFS Cid>
 - BTFS will also integrate with an Access-Key module, this module used to store and manage access-keys of the S3-Compatible-API.
 - S3-Compatible-API server should be a independent module and can be separately started from the BTFS daemon.
 
-#### 2. Start S3-Compatible API server according to the corresponding configuration or startup command options.
+### 2. Start S3-Compatible API server according to the corresponding configuration or startup command options
 
 ```text
 if (option.s3-compatible-api == "true" || (option.s3-compatible-api == "" && config.S3CompatibleAPI.Enable == true) {
@@ -187,7 +200,7 @@ if (option.s3-compatible-api == "true" || (option.s3-compatible-api == "" && con
 }
 ```
 
-#### 3. Generate Access Key
+### 3. Generate Access Key
 
 ```text
 function generate_access_key() (object access_key) {
