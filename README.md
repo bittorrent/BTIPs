@@ -41,6 +41,6 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | BTIP-25 |   [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)   |  <steve.zhang@tron.network>   | core protocal | S3-Compatible API | Living  |
 | BTIP-30 |   [Simplify Backup and Recovery of BTFS Data](BTIPS/BTIP-30.md)   |  <shawn.huang@tron.network>   |  client api   |                     | Final  |
 | BTIP-35 |   [Support Multibase Command To Encode/Decode The Content](BTIPS/BTIP-35.md)   |  <shawn.huang@tron.network>   |  client api   |                     | Final  |
-| BTIP-51 |   [Add File metadata to blockchain](BTIPS/BTIP-51.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Last Call  |
+| BTIP-51 |   [Add File metadata to blockchain](BTIPS/BTIP-51.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Final  |
 | BTIP-52 |   [File share with encryption](BTIPS/BTIP-52.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Final  |
 | BTIP-54 |   [Decentralize node score calculation](BTIPS/BTIP-54.md)   |  <steve.zhang@tron.network>   | core protocal |                     | Draft  |

@@ -4,7 +4,7 @@ BTIP: 51
 title: Add File metadata to blockchain
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/51
-status: Last Call
+status: Final
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2023-09-28
