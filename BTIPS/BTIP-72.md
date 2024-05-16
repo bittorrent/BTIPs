@@ -4,7 +4,7 @@ BTIP: 72
 title: Support symmetric encryption when sharing files with BTFS
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/72
-status: Draft
+status: Review
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2024-05-07
