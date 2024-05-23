@@ -44,5 +44,5 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | BTIP-51 |   [Add File metadata to blockchain](BTIPS/BTIP-51.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Final  |
 | BTIP-52 |   [File share with encryption](BTIPS/BTIP-52.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Final  |
 | BTIP-54 |   [Decentralize node score calculation](BTIPS/BTIP-54.md)   |  <steve.zhang@tron.network>   | core protocal |                     | Draft  |
-| BTIP-72 |   [Support symmetric encryption when sharing files with BTFS](BTIPS/BTIP-72.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Review  |
-| BTIP-73 |   [Support setting up private keys with imported keystore files](BTIPS/BTIP-73.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Review  |
+| BTIP-72 |   [Support symmetric encryption when sharing files with BTFS](BTIPS/BTIP-72.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Last Call  |
+| BTIP-73 |   [Support setting up private keys with imported keystore files](BTIPS/BTIP-73.md)   |  <shawn.huang@tron.network>   | core protocal |                     | Last Call  |
