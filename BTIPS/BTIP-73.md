@@ -4,7 +4,7 @@ BTIP: 73
 title: Support setting up private keys with imported keystore files
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/73
-status: Last Call
+status: Final
 last-call-deadline: 2024-06-06
 type: Core Protocol
 category (*only required for Core Protocol):
