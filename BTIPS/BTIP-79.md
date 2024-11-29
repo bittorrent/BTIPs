@@ -12,15 +12,15 @@ created: 2024-11-28
 
 ## Simple Summary
 
-Add a command to add CIDs into the datastore, and some other commands to view or delete these CIDs. Then, we can implement a feature to filter these added CIDs when accessing CIDs through the gateway, ensuring that the resources corresponding to these CIDs cannot be accessed via the gateway.
+Implement one command to add CIDs to the database and several other commands to view and remove these CIDs. This solution will filter out the added CIDs and make their associated files inaccessible when users attempt to access CIDs via the gateway.
 
 ## Abstract
 
-Provide an effective method to prevent users from accessing specific CIDs through the gateway.
+Provide an effective solution to restrict user access to specific CIDs via the gateway.
 
 ## Motivation
 
-When someone exposing their CID resources through the gateway api, but there may be some certain resources, which could be harmful to users, and they may don't want them to be accessed by the api. In such cases, this feature can be used to block access to those resources without deleting them from the entire BTFS network.
+Users may wish to avoid certain CID files that could pose risks to them when accessing publicly available CIDs through API gateways. The proposed feature prevents access to these files without requiring their removal from the BTFS network.
 
 ## Specification
 
