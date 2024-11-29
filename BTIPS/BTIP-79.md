@@ -52,7 +52,11 @@ btfs cidstore has <cid>
 
 ## Rationale
 
+The command provides a convenient way to manage CIDs that need to be filtered in the gateway.
+
 ## Backwards Compatibility
+
+This new feature is backward-compatible and won’t cause breaking changes.
 
 ## Test Cases
 
