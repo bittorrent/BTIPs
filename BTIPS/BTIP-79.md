@@ -3,8 +3,8 @@ BTIP: 79
 title: Support filtering specific CIDs when accessing CIDs via the gateway
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/79
-status: Review
-last-call-deadline: 2024-12-09
+status: Last Call
+last-call-deadline: 2024-12-13
 type: Client API
 category (*only required for Core Protocol):
 created: 2024-11-28
