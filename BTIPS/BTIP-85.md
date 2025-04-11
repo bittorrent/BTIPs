@@ -3,7 +3,7 @@ BTIP: 85
 title: Support staking and penalize storage nodes that lose data
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/85
-status: Idea
+status: Draft
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2025-03-27
