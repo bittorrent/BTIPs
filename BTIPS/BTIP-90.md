@@ -1,6 +1,6 @@
 ```
 BTIP: 90
-title: Replacing the centralized guard with decentralized smart contracts
+title: Introduce smart contracts to manage and store file metadata
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/90
 status: Idea
@@ -11,19 +11,19 @@ created: 2025-05-16
 
 ## Simple Summary
 
-Replacing the existing centralized guard service with a decentralized smart contract mechanism to enhance the network's decentralization, transparency, and security.
+Introduce a smart contract to manage and store file metadata in a decentralized and transparent manner.
 
 ## Abstract
 
-This BTIP proposes replacing the centralized guard service with smart contracts. This will enhance the network's level of decentralization, transparency, and security.
+This BTIP proposes the introduction of a smart contract to manage and store file metadata on-chain. This approach enhances transparency, auditability, and decentralization of file metadata management within the network.
 
 ## Motivation
 
-The current BTFS relies on a centralized guard service to manage storage nodes, creating single points of failure and transparency issues. Introducing SPs and smart contracts enables on-chain governance, transparent and auditable operations, attracting higher quality storage resources and improving overall service quality.
+Currently, file metadata management lacks on-chain transparency and auditability. By introducing a smart contract, file metadata can be managed in a decentralized, transparent, and tamper-resistant way, improving trust and reliability for all participants.
 
 ## Specification
 
-A set of one or more smart contracts will replace the functionality of the existing centralized "guard" service. These contracts will be deployed on BTTC network. Below are some core data structures of the contract:
+A smart contract will be deployed on the BTTC network to manage and store file metadata. The contract will provide interfaces for adding file metadata, updating contract statuses, and querying metadata and status information. Below are some core data structures of the contract:
 
 ```javascript
     uint8 public constant STATUS_INIT = 0;
@@ -149,7 +149,7 @@ Furthermore, the contract will also expose some `view` methods.
 
 ## Backwards Compatibility
 
-This proposal introduces a breaking change. All GRPC endpoints related to challenge will be removed. All nodes should upgrade to interact with the new smart contract.
+This proposal introduces a breaking change. All nodes should upgrade to interact with the new smart contract.
 
 ## Test Cases
 
