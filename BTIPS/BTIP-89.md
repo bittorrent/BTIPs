@@ -31,9 +31,8 @@ A Storage Provider (SP) is a registered and verified node in the BTFS network wh
 
 #### 1.2 Entry Conditions
 
-- **Staking Requirement**: Potential SPs need to stake a certain amount of BTT.
-- **Hardware and Network Requirements**: SPs may need to meet minimum hardware configurations (such as storage space, CPU, memory) and network bandwidth requirements to ensure service quality.
-- **Registration Process**: SPs may also need to complete registration by submitting necessary node information.
+- **BTTC Validator Prerequisite**: Only nodes that have already become BTTC validators are eligible to apply for SP status.
+- **Application Process**: After becoming a BTTC validator, the node can apply to become an SP by submitting the required information for verification.
 
 #### 1.3 Responsibilities and Obligations
 
@@ -48,13 +47,13 @@ A Storage Provider (SP) is a registered and verified node in the BTFS network wh
 ## Rationale
 
 - **Reasons for Choosing the SP Model**: The SP model clearly defines the responsibilities and incentives for storage providers, helping to attract professional storage operators to join, thereby improving the overall storage quality and reliability of the network. Compared to unstructured node networks, the SP model is easier to manage and scale.
-- **Necessity of Staking Mechanism**: The stake serves as an economic incentive and a basis for penalties, ensuring SPs have sufficient motivation to participate honestly in the network and provide quality service, reducing the risk of malicious behavior.
+- **Necessity of Being Validator First**: Requiring SPs to first become validators ensures that only nodes with proven reliability and trustworthiness can participate as storage providers. This prerequisite helps maintain the quality and security of the storage network by reducing the risk of unreliable or malicious nodes.
 
 ## Backwards Compatibility
 
 This BTIP introduces significant changes to the core operational model of BTFS and is expected to have incompatible impacts on existing clients and nodes.
 
-**Host**: Existing storage nodes will need to upgrade and register/operate according to the new SP specifications; otherwise, they will not be able to participate in the new network and receive incentives.
+Existing storage nodes will need to upgrade and register/operate according to the new SP specifications; otherwise, they will not be able to participate in the new network and receive incentives.
 
 ## Test Cases
 
