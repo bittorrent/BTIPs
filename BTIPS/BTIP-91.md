@@ -48,8 +48,6 @@ SPInfo[] public allSPNodes;
 function registerSP(address nodeAddr, uint256 stake) external;
 // Status change
 function updateStatus(address nodeAddr, SPStatus newStatus) external;
-// Incentives and penalties
-
 // Deregistration
 function exitSP(address nodeAddr) external;
 // Query
