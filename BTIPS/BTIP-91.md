@@ -1,6 +1,6 @@
 ```
 BTIP: 91
-title: Integrate an SP management smart contract to facilitate the lifecycle management of SP nodes
+title: Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/91
 status: Idea
@@ -11,57 +11,26 @@ created: 2025-05-22
 
 ## Simple Summary
 
-Integrate a Storage Provider (SP) management smart contract to realize the lifecycle management of SP nodes, including registration, status change and deregistration, thereby enhancing the automation and transparency of the network.
+This proposal aims to introduce a Proposal governance mechanism for the BTFS network. All processes including proposal submission, voting, and execution are implemented via smart contracts to enhance the automation and transparency of network governance.
 
 ## Abstract
 
-This proposal suggests deploying an SP management smart contract on the BTTC network, responsible for the full lifecycle management of SP nodes, including registration, status change and deregistration. By automating processes and ensuring on-chain transparency through smart contracts, the efficiency and security of SP node management will be improved.
+This proposal suggests deploying a Proposal governance smart contract on the BTTC network, allowing community members to submit proposals, participate in voting, and automatically execute related actions based on voting results, all through the contract. This mechanism will automate the governance process on-chain and ensure the process is open and traceable.
 
 ## Motivation
 
-By introducing an SP management smart contract, the following can be achieved:
+Introducing a Proposal governance mechanism implemented by smart contracts brings the following advantages:
 
-- Automate processes such as SP node registration, status change, and deregistration
-- Execute incentive and penalty mechanisms on-chain to enhance fairness
-- Make node status and history information queryable on-chain, increasing transparency
+- All governance processes are automated without manual intervention
+- Proposal, voting, and execution are fully transparent and traceable on-chain
+- Lowers the threshold for governance and increases community participation
+- Prevents tampering with the governance process and improves security
 
 ## Specification
 
-```js
-// Status constants
-enum SPStatus { Pending, Rejected, Active, InActive }
-
-struct SPInfo {
-    string SPId;
-    address Address;
-    address ValidatorAddress;
-    string Name;
-    SPStatus status;
-    string Description;
-    uint256 lastUpdate;
-}
-
-mapping(address => SPInfo) public spNodes;
-SPInfo[] public allSPNodes;
-
-// Register SP node
-function registerSP(address nodeAddr, uint256 stake) external;
-// Status change
-function updateStatus(address nodeAddr, SPStatus newStatus) external;
-// Deregistration
-function exitSP(address nodeAddr) external;
-// Query
-function getSPInfo(address nodeAddr) external view returns (SPInfo memory);
-
-// Events
-event SPRegistered(address indexed nodeAddr, uint256 stake);
-event StatusUpdated(address indexed nodeAddr, SPStatus newStatus);
-event SPExited(address indexed nodeAddr);
-```
-
 ## Rationale
 
-The SP management smart contract enables efficient, transparent, and automated lifecycle management of SP nodes.
+The Proposal governance smart contract automates and makes transparent the governance process, enhancing the decentralized governance capability of the BTFS network.
 
 ## Backwards Compatibility
 
