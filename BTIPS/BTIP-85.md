@@ -3,7 +3,7 @@ BTIP: 85
 title: Support staking and penalize storage nodes that lose data
 author: Shawn-Huang-Tron<shawn.huang@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/85
-status: Draft
+status: Withdrawn
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2025-03-27
@@ -42,7 +42,7 @@ Below are some core data structures of the contract:
         uint256 unlockTime;        // Timestamp when funds become withdrawable
         uint256 unlockedAmount;    // Amount available for withdrawal
     }
-    
+
     mapping(address => StakeInfo) public stakers;
 
     // Events
@@ -62,7 +62,7 @@ The following are the external methods exposed by the contract:
      */
     function stake() external payable {
         require(msg.value >= minStakeAmount, "Insufficient stake amount");
-        
+
         StakeInfo storage info = stakers[msg.sender];
         info.stakedAmount += msg.value;
         totalStaked += msg.value;
@@ -116,7 +116,7 @@ Furthermore, the contract will also expose some `view` methods, making it easier
 
 ```javascript
     // ================= View Functions =================
-    
+
     /**
      * @dev Get user's stake information
      * @param user Address to query
