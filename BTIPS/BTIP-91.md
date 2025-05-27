@@ -11,26 +11,26 @@ created: 2025-05-22
 
 ## Simple Summary
 
-This proposal aims to introduce a Proposal governance mechanism for the BTFS network. All processes including proposal submission, voting, and execution are implemented via smart contracts to enhance the automation and transparency of network governance.
+This proposal outlines a general approach to introducing a governance mechanism into the BTFS network. The process involves leveraging smart contracts to manage various aspects of governance, aiming to improve efficiency and transparency.
 
 ## Abstract
 
-This proposal suggests deploying a Proposal governance smart contract on the BTTC network, allowing community members to submit proposals, participate in voting, and automatically execute related actions based on voting results, all through the contract. This mechanism will automate the governance process on-chain and ensure the process is open and traceable.
+The idea is to use smart contract on the BTTC network that supports community-driven governance. This would allow members to submit ideas, engage in decision-making, and have outcomes enacted through automated means, all governed by predefined rules within the contract.
 
 ## Motivation
 
-Introducing a Proposal governance mechanism implemented by smart contracts brings the following advantages:
+Adopting a smart contract-based governance model offers several benefits:
 
-- All governance processes are automated without manual intervention
-- Proposal, voting, and execution are fully transparent and traceable on-chain
-- Lowers the threshold for governance and increases community participation
-- Prevents tampering with the governance process and improves security
+- Governance can be conducted with minimal manual oversight
+- Processes are recorded on-chain, offering a degree of visibility
+
+Moreover, this mechanism can also facilitate processes such as SP (Storage Provider) joining and exiting after approval, as well as handling other types of proposals in a unified governance framework.
 
 ## Specification
 
 ## Rationale
 
-The Proposal governance smart contract automates and makes transparent the governance process, enhancing the decentralized governance capability of the BTFS network.
+Utilizing a smart contract to handle governance tasks could streamline operations and support a more distributed decision-making process. With capabilities to manage SP approvals and other governance-related actions, the system becomes more adaptable and comprehensive.
 
 ## Backwards Compatibility
 
