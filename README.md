@@ -26,28 +26,28 @@ First review this README. Then clone the repository and add your BTIP to it. The
 ## BTIP status type
 
 |   type name   |                 description                 |
-| :-----------: | :-----------------------------------------: |
+|:-------------:|:-------------------------------------------:|
 | core protocol | this kind of BTIP will affect core protocal |
 |  client api   |  this kind of BTIP will affect client api   |
 
 ## All BTIPs list
 
-|   ID    |                                                   Title                                                   |            Author             |     Type      |     Category      | Status |
-| :-----: | :-------------------------------------------------------------------------------------------------------: | :---------------------------: | :-----------: | :---------------: | :----: |
-| BTIP-1  |                           [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)                           |  <shawn.huang@tron.network>   |  client api   |                   | Living |
-| BTIP-2  |                          [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)                           | <laocheng.cheng@tron.network> | core protocal |  Vault contract   | Final  |
-| BTIP-9  |                     [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md)                      | <laocheng.cheng@tron.network> | core protocal |  Vault contract   | Final  |
-| BTIP-20 |                          [Use merekle root for online proofs](BTIPS/BTIP-20.md)                           |  <shawn.huang@tron.network>   | core protocal |   Online Proof    | Final  |
-| BTIP-25 |                       [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)                        |  <steve.zhang@tron.network>   | core protocal | S3-Compatible API | Living |
-| BTIP-30 |                       [Simplify Backup and Recovery of BTFS Data](BTIPS/BTIP-30.md)                       |  <shawn.huang@tron.network>   |  client api   |                   | Final  |
-| BTIP-35 |                [Support Multibase Command To Encode/Decode The Content](BTIPS/BTIP-35.md)                 |  <shawn.huang@tron.network>   |  client api   |                   | Final  |
-| BTIP-51 |                            [Add File metadata to blockchain](BTIPS/BTIP-51.md)                            |  <shawn.huang@tron.network>   | core protocal |                   | Final  |
-| BTIP-52 |                              [File share with encryption](BTIPS/BTIP-52.md)                               |  <shawn.huang@tron.network>   | core protocal |                   | Final  |
-| BTIP-54 |                          [Decentralize node score calculation](BTIPS/BTIP-54.md)                          |  <steve.zhang@tron.network>   | core protocal |                   | Draft  |
-| BTIP-72 |               [Support symmetric encryption when sharing files with BTFS](BTIPS/BTIP-72.md)               |  <shawn.huang@tron.network>   | core protocal |                   | Final  |
-| BTIP-73 |             [Support setting up private keys with imported keystore files](BTIPS/BTIP-73.md)              |  <shawn.huang@tron.network>   | core protocal |                   | Final  |
-| BTIP-79 |         [Support filtering specific CIDs when accessing CIDs via the gateway.](BTIPS/BTIP-79.md)          |   <cody.meng@tron.network>    |  client api   |                   | Final  |
-| BTIP-85 |               [Support staking and penalize storage nodes that lose data](BTIPS/BTIP-85.md)               |  <shawn.huang@tron.network>   | core protocal |                   | Draft  |
-| BTIP-89 |                             [Introduce SPs as core storage](BTIPS/BTIP-89.md)                             |   <cody.meng@tron.network>    | core protocal |                   |  Idea  |
-| BTIP-90 |              [Introduce smart contracts to manage and store file metadata](BTIPS/BTIP-90.md)              |   <cody.meng@tron.network>    | core protocal |                   |  Idea  |
-| BTIP-91 | [Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract](BTIPS/BTIP-91.md) |   <cody.meng@tron.network>    | core protocal |                   |  Idea  |
+|   ID    |                                                   Title                                                   |            Author             |     Type      |     Category      |  Status   |
+| :-----: | :-------------------------------------------------------------------------------------------------------: | :---------------------------: | :-----------: | :---------------: |:---------:|
+| BTIP-1  |                           [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)                           |  <shawn.huang@tron.network>   |  client api   |                   |  Living   |
+| BTIP-2  |                          [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)                           | <laocheng.cheng@tron.network> | core protocal |  Vault contract   |   Final   |
+| BTIP-9  |                     [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md)                      | <laocheng.cheng@tron.network> | core protocal |  Vault contract   |   Final   |
+| BTIP-20 |                          [Use merekle root for online proofs](BTIPS/BTIP-20.md)                           |  <shawn.huang@tron.network>   | core protocal |   Online Proof    |   Final   |
+| BTIP-25 |                       [Integrate With S3-Compatible API Service](BTIPS/BTIP-25.md)                        |  <steve.zhang@tron.network>   | core protocal | S3-Compatible API |  Living   |
+| BTIP-30 |                       [Simplify Backup and Recovery of BTFS Data](BTIPS/BTIP-30.md)                       |  <shawn.huang@tron.network>   |  client api   |                   |   Final   |
+| BTIP-35 |                [Support Multibase Command To Encode/Decode The Content](BTIPS/BTIP-35.md)                 |  <shawn.huang@tron.network>   |  client api   |                   |   Final   |
+| BTIP-51 |                            [Add File metadata to blockchain](BTIPS/BTIP-51.md)                            |  <shawn.huang@tron.network>   | core protocal |                   |   Final   |
+| BTIP-52 |                              [File share with encryption](BTIPS/BTIP-52.md)                               |  <shawn.huang@tron.network>   | core protocal |                   |   Final   |
+| BTIP-54 |                          [Decentralize node score calculation](BTIPS/BTIP-54.md)                          |  <steve.zhang@tron.network>   | core protocal |                   |   Draft   |
+| BTIP-72 |               [Support symmetric encryption when sharing files with BTFS](BTIPS/BTIP-72.md)               |  <shawn.huang@tron.network>   | core protocal |                   |   Final   |
+| BTIP-73 |             [Support setting up private keys with imported keystore files](BTIPS/BTIP-73.md)              |  <shawn.huang@tron.network>   | core protocal |                   |   Final   |
+| BTIP-79 |         [Support filtering specific CIDs when accessing CIDs via the gateway.](BTIPS/BTIP-79.md)          |   <cody.meng@tron.network>    |  client api   |                   |   Final   |
+| BTIP-85 |               [Support staking and penalize storage nodes that lose data](BTIPS/BTIP-85.md)               |  <shawn.huang@tron.network>   | core protocal |                   |   Withdrawn   |
+| BTIP-89 |                             [Introduce SPs as core storage](BTIPS/BTIP-89.md)                             |   <cody.meng@tron.network>    | core protocal |                   | Idea |
+| BTIP-90 |              [Introduce smart contracts to manage and store file metadata](BTIPS/BTIP-90.md)              |   <cody.meng@tron.network>    | core protocal |                   |   Idea    |
+| BTIP-91 | [Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract](BTIPS/BTIP-91.md) |   <cody.meng@tron.network>    | core protocal |                   |   Idea    |
