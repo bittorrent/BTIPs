@@ -48,3 +48,4 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | BTIP-73 |     [Support setting up private keys with imported keystore files](BTIPS/BTIP-73.md)     |  <shawn.huang@tron.network>   | core protocal |                   |   Final   |
 | BTIP-79 | [Support filtering specific CIDs when accessing CIDs via the gateway.](BTIPS/BTIP-79.md) |   <cody.meng@tron.network>    |  client api   |                   |   Final   |
 | BTIP-85 |      [Support staking and penalize storage nodes that lose data](BTIPS/BTIP-85.md)       |  <shawn.huang@tron.network>   | core protocal |                   | Withdrawn |
+| BTIP-89 |                    [Introduce SPs as core storage](BTIPS/BTIP-89.md)                     |   <cody.meng@tron.network>    | core protocal |                   |   Idea    |
