@@ -3,7 +3,7 @@ BTIP: 89
 title: Introduce SPs as core storage
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/89
-status: Idea
+status: Draft
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2025-05-15
