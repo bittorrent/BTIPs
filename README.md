@@ -50,4 +50,4 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | BTIP-85 |               [Support staking and penalize storage nodes that lose data](BTIPS/BTIP-85.md)               |  <shawn.huang@tron.network>   | core protocal |                   | Withdrawn |
 | BTIP-89 |                             [Introduce SPs as core storage](BTIPS/BTIP-89.md)                             |   <cody.meng@tron.network>    | core protocal |                   |   Draft   |
 | BTIP-90 |              [Introduce smart contracts to manage and store file metadata](BTIPS/BTIP-90.md)              |   <cody.meng@tron.network>    | core protocal |                   |   Draft   |
-| BTIP-91 | [Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract](BTIPS/BTIP-91.md) |   <cody.meng@tron.network>    | core protocal |                   |   Idea    |
+| BTIP-91 | [Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract](BTIPS/BTIP-91.md) |   <cody.meng@tron.network>    | core protocal |                   |   Draft   |
