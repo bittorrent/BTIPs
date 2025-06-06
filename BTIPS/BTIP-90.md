@@ -3,7 +3,7 @@ BTIP: 90
 title: Introduce smart contracts to manage and store file metadata
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/90
-status: Idea
+status: Draft
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2025-05-16
