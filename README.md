@@ -33,7 +33,7 @@ First review this README. Then clone the repository and add your BTIP to it. The
 ## All BTIPs list
 
 |   ID    |                                                   Title                                                   |            Author             |     Type      |     Category      |  Status   |
-| :-----: | :-------------------------------------------------------------------------------------------------------: | :---------------------------: | :-----------: | :---------------: | :-------: |
+|:-------:|:---------------------------------------------------------------------------------------------------------:|:-----------------------------:|:-------------:|:-----------------:|:---------:|
 | BTIP-1  |                           [Integrate With BitTorrent Protocol](BTIPS/BTIP-1.md)                           |  <shawn.huang@tron.network>   |  client api   |                   |  Living   |
 | BTIP-2  |                          [Vault Contract Support Multi-Tokens](BTIPS/BTIP-2.md)                           | <laocheng.cheng@tron.network> | core protocal |  Vault contract   |   Final   |
 | BTIP-9  |                     [Price Oracle Contract to Support Multi-Tokens](BTIPS/BTIP-9.md)                      | <laocheng.cheng@tron.network> | core protocal |  Vault contract   |   Final   |
@@ -48,6 +48,6 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | BTIP-73 |             [Support setting up private keys with imported keystore files](BTIPS/BTIP-73.md)              |  <shawn.huang@tron.network>   | core protocal |                   |   Final   |
 | BTIP-79 |         [Support filtering specific CIDs when accessing CIDs via the gateway.](BTIPS/BTIP-79.md)          |   <cody.meng@tron.network>    |  client api   |                   |   Final   |
 | BTIP-85 |               [Support staking and penalize storage nodes that lose data](BTIPS/BTIP-85.md)               |  <shawn.huang@tron.network>   | core protocal |                   | Withdrawn |
-| BTIP-89 |                             [Introduce SPs as core storage](BTIPS/BTIP-89.md)                             |   <cody.meng@tron.network>    | core protocal |                   |  Review   |
-| BTIP-90 |              [Introduce smart contracts to manage and store file metadata](BTIPS/BTIP-90.md)              |   <cody.meng@tron.network>    | core protocal |                   |  Review   |
-| BTIP-91 | [Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract](BTIPS/BTIP-91.md) |   <cody.meng@tron.network>    | core protocal |                   |  Review   |
+| BTIP-89 |                             [Introduce SPs as core storage](BTIPS/BTIP-89.md)                             |   <cody.meng@tron.network>    | core protocal |                   | Last Call |
+| BTIP-90 |              [Introduce smart contracts to manage and store file metadata](BTIPS/BTIP-90.md)              |   <cody.meng@tron.network>    | core protocal |                   | Last Call |
+| BTIP-91 | [Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract](BTIPS/BTIP-91.md) |   <cody.meng@tron.network>    | core protocal |                   | Last Call |

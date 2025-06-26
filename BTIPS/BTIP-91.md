@@ -3,7 +3,8 @@ BTIP: 91
 title: Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/91
-status: Review
+status: Last Call
+last-call-deadline: 2025-07-03
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2025-05-22
