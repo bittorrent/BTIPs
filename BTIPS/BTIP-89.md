@@ -3,7 +3,7 @@ BTIP: 89
 title: Introduce SPs as core storage
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/89
-status: Last Call
+status: Final 
 last-call-deadline: 2025-07-03
 type: Core Protocol
 category (*only required for Core Protocol):
