@@ -39,7 +39,7 @@ A renewal feature enables efficient, seamless, and cost-effective extension of f
 
 - A new CLI command is introduced:
   ```bash
-  btfs storage renew <cid> --duration <additional-time>
+  btfs storage upload renew <cid> --storage-length <additional-time>
   ```
 
 ## Rationale

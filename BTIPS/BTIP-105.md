@@ -30,7 +30,7 @@ This feature increases network flexibility and supports a broader range of deplo
 - **CLI & API Changes**
 
   - Add `--proxy <proxy-url>` CLI parameter to enable proxy mode and specify the proxy endpoint. Default behavior remains unchanged if `--proxy` is not provided.
-  - Add `btfs storage proxy-pay` command to settle payment for proxy upload.
+  - Add `btfs storage upload proxy-pay` command to settle payment for proxy upload.
 
 - **Proxy Node Behavior**
 
@@ -45,10 +45,7 @@ It lowers the barrier to entry, improves accessibility, and ensures proper payme
 
 ## Backwards Compatibility
 
-This feature is **backward compatible**:
-
-- Proxy mode is optional and off by default.
-- Existing direct upload workflows remain unaffected.
+This new feature is backward-compatible and won’t cause breaking changes..
 
 ## Test Cases
 
