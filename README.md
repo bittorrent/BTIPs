@@ -51,6 +51,6 @@ First review this README. Then clone the repository and add your BTIP to it. The
 | BTIP-89  |                             [Introduce SPs as core storage](BTIPS/BTIP-89.md)                             |   <cody.meng@tron.network>    | core protocal |                   |   Final   |
 | BTIP-90  |              [Introduce smart contracts to manage and store file metadata](BTIPS/BTIP-90.md)              |   <cody.meng@tron.network>    | core protocal |                   |   Final   |
 | BTIP-91  | [Introduce Proposal Mechanism and Implement BTFS Network Governance via Smart Contract](BTIPS/BTIP-91.md) |   <cody.meng@tron.network>    | core protocal |                   |   Final   |
-| BTIP-103 |       [Support fetching SP address from the proposal contract for file uploads](BTIPS/BTIP-103.md)        |   <cody.meng@tron.network>    | core protocal |                   |   Draft   |
-| BTIP-104 |                          [Support renewal for uploaded files](BTIPS/BTIP-104.md)                          |   <cody.meng@tron.network>    | core protocal |                   |   Draft   |
-| BTIP-105 |                         [Introduce proxy mode for file upload](BTIPS/BTIP-105.md)                         |   <cody.meng@tron.network>    | core protocal |                   |   Draft   |
+| BTIP-103 |       [Support fetching SP address from the proposal contract for file uploads](BTIPS/BTIP-103.md)        |   <cody.meng@tron.network>    | core protocal |                   |  Review   |
+| BTIP-104 |                          [Support renewal for uploaded files](BTIPS/BTIP-104.md)                          |   <cody.meng@tron.network>    | core protocal |                   |  Review   |
+| BTIP-105 |                         [Introduce proxy mode for file upload](BTIPS/BTIP-105.md)                         |   <cody.meng@tron.network>    | core protocal |                   |  Review   |
