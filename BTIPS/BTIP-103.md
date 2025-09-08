@@ -3,7 +3,8 @@ BTIP: 103
 title: Support fetching SP address from the proposal contract for file uploads
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/103
-status: Review 
+status: Last Call
+last-call-deadline: 2025-09-22
 type: Core Protocol
 category (*only required for Core Protocol):
 created: 2025-07-29
