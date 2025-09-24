@@ -4,13 +4,17 @@ status: Draft
 type: Core Protocol
 category: Networking
 created: 2025-09-14
-Simple Summary
+
+## Simple Summary
+
 This proposal introduces support for BitTorrent-style magnet links and parallel, multi-peer "swarm" downloading to the BitTorrent File System (BTFS) to increase download speeds and file resilience.
  
-Abstract
+## Abstract
+
 This BTIP proposes an extension to the BTFS protocol to enable swarm-based file transfers initiated via a magnet link. Currently, BTFS retrieves content from individual peers discovered through the DHT. This proposal specifies a mechanism for peers to advertise the specific file pieces they hold, allowing a client to discover multiple sources and download these pieces in parallel. This leverages the existing libp2p networking stack and DHT to create a more robust, efficient, and decentralized content delivery system within BTFS, mirroring one of the core strengths of the BitTorrent protocol.
  
-Motivation
+## Motivation
+
 The current BTFS protocol, while effective for decentralized storage and retrieval, does not fully optimize for the rapid distribution of large or popular files. Content is typically downloaded linearly from a peer discovered via the DHT. This process can be slow if the hosting peer has limited upload bandwidth or if only a few peers hold the complete file.
 The BitTorrent protocol solved this problem with "swarms," where each downloader also becomes an uploader for the pieces it possesses. Adopting this model in BTFS would:
 1. 
@@ -21,7 +25,8 @@ Enhance File Availability: A file remains available as long as all its pieces ex
 Improve Network Efficiency: It promotes a "tit-for-tat" sharing ecosystem, reducing the load on any single host.
 Without this feature, BTFS remains less efficient than BitTorrent for high-demand content distribution, limiting its potential use cases.
  
-Specification
+## Specification
+
 1. Magnet Link Format
 A BTFS magnet link will be defined to identify the content and optionally provide discovery hints. The format is as follows:
 btfs://<root-hash>?dn=<display-name>&xt=urn:btfs:<root-hash>
@@ -52,7 +57,8 @@ Verification: Upon receiving a piece, the client verifies its integrity by hashi
 5. 
 Re-advertisement: Once a client successfully downloads and verifies a piece, it updates its own bitfield and advertises its new status on the DHT, becoming a seeder for that piece for others in the swarm.
  
-Rationale
+## Rationale
+
 The design choices were made to maximize compatibility with the existing BTFS/libp2p stack while introducing proven concepts from BitTorrent.
 • 
 Why use the DHT for piece advertisement? Using the existing libp2p DHT is a decentralized and tracker-less approach, which aligns perfectly with the ethos of BTFS. The alternative, using centralized trackers, would introduce a single point of failure and is contrary to the protocol's goals.
@@ -62,7 +68,8 @@ Why a bitfield for piece availability? A bitfield is a highly compact and effici
 Why not invent a new link format? The proposed btfs:// format is an extension of the existing content addressing scheme and follows the URN syntax established by BEP-9 for magnet links, making it both familiar and extensible.
 This design directly addresses the motivation by creating a clear path for parallel downloads and increased redundancy. The primary consideration was to avoid a radical redesign of BTFS, instead layering swarm capabilities on top of the existing content-addressed foundation.
  
-Backwards Compatibility
+## Backwards Compatibility
+
 This proposal is fully backwards-compatible.
 • 
 Clients that do not support this BTIP will ignore the swarm-specific DHT records. They will fall back to the existing DHT provider lookup mechanism, finding peers that have the entire file and downloading from them as they do today.
@@ -70,7 +77,8 @@ Clients that do not support this BTIP will ignore the swarm-specific DHT records
 Clients that do support this BTIP can still interact with older clients, as they can treat a peer advertising the full file as simply a peer with a complete bitfield.
 No breaking changes are introduced to the core data structures or peer-to-peer connection protocols.
  
-Test Cases (Optional)
+## Test Cases (Optional)
+
 1. 
 A client with a magnet link should be able to download a file from a swarm of 5 peers, where each peer only has 20% of the file.
 2. 
@@ -78,7 +86,7 @@ An old client and a new client should be able to download the same file from a p
 3. 
 A client, after downloading a piece, should correctly advertise its availability on the DHT, and another peer should be able to download that piece from the new client.
  
-Implementation
+## Implementation
 An implementation must be created before this BTIP can be considered "Final." A reference implementation could be developed as a module for a major BTFS client (like go-btfs). It would involve:
 1. 
 Modifying the DHT logic to support publishing and querying piece-specific availability records.
