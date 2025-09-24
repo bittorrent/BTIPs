@@ -3,7 +3,7 @@ BTIP: 105
 title: Introduce Proxy Mode for File Upload
 author: codymeng<cody.meng@tron.network>
 discussions-to: https://github.com/bittorrent/BTIPs/issues/105
-status: Last Call
+status: Final
 last-call-deadline: 2025-09-22
 type: Core Protocol
 category (*only required for Core Protocol):
